@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>United States — Immigration Analysis | CREL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-us">
+
+  <!-- Institutional partner bar -->
+  <div class="inst-bar">
+    <div class="container">
+      <div class="inst-logos">
+        <a href="https://www.charlesrivereconomicslabs.org/" target="_blank" rel="noopener noreferrer" class="inst-logo-link crel-brand">
+          <img src="crel-logo.png" class="crel-logo" alt="CREL" />
+          <span>Charles River Economics Labs</span>
+        </a>
+        <div class="inst-sep"></div>
+        <a href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer" class="inst-logo-link">
+          <img src="harvard-logo.svg" class="harvard-logo" alt="Harvard" />
+          <span>Harvard University</span>
+        </a>
+        <div class="inst-sep"></div>
+        <a href="https://www.bankofcanada.ca/" target="_blank" rel="noopener noreferrer" class="inst-logo-link">
+          <img src="boc-logo.png" class="boc-logo" alt="Bank of Canada" />
+          <span>Bank of Canada</span>
+        </a>
+      </div>
+      <span class="data-date-badge">Data as of March 2026</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <button class="nav-hamburger" aria-label="Menu" onclick="this.closest('.navbar').classList.toggle('nav-open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="comparison.html">Comparison</a></li>
+        <li><a href="us.html" class="active">United States</a></li>
+        <li><a href="canada.html">Canada</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Comparison</a>
+        <span class="sep">/</span>
+        <span>United States</span>
+      </div>
+      <p class="label-sm">Country Report &middot; United States</p>
+      <h1>United States: Immigration Trends, Policy, and Economic Outcomes</h1>
+      <hr class="header-rule" />
+      <p class="subtitle">Analysis of legal permanent resident admissions, visa category allocations, demographic shifts, labor force participation, and the quantifiable effects of legislative changes on immigration flows from 1970 to present.</p>
+      <button class="search-bar-trigger" onclick="openSearch()">
+        <span class="search-bar-icon">&#x2315;</span>
+        <span class="search-bar-text">Search for a specific parameter<span class="search-dots"></span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Indicator tabs -->
+  <div class="indicator-bar">
+    <div class="container">
+      <button class="indicator-tab active" data-tab="us-overview"><span class="tab-icon">◈</span> Overview</button>
+      <button class="indicator-tab" data-tab="us-flows"><span class="tab-icon">▤</span> Admission Flows</button>
+      <button class="indicator-tab" data-tab="us-visa"><span class="tab-icon">▦</span> Visa Categories</button>
+      <button class="indicator-tab" data-tab="us-econ"><span class="tab-icon">▧</span> Economic Impact</button>
+      <button class="indicator-tab" data-tab="us-geo"><span class="tab-icon">▩</span> Geography</button>
+      <button class="indicator-tab" data-tab="us-policy"><span class="tab-icon">▨</span> Policy Timeline</button>
+    </div>
+  </div>
+
+  <!-- TAB: Overview -->
+  <div id="tab-us-overview" class="tab-panel active">
+    <section class="section">
+      <div class="container">
+        <div class="stats-strip">
+          <div class="stat-cell">
+            <div class="stat-val">1.18M</div>
+            <div class="stat-lbl">LPR Admissions</div>
+            <div class="stat-src">FY 2024</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-val">45.3M</div>
+            <div class="stat-lbl">Foreign-Born Residents</div>
+            <div class="stat-src">ACS 2024 Est.</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-val">14.3%</div>
+            <div class="stat-lbl">Population Share</div>
+            <div class="stat-src">Foreign-Born</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-val">$2.6T</div>
+            <div class="stat-lbl">GDP Contribution</div>
+            <div class="stat-src">Immigrant Workers</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-val">~17%</div>
+            <div class="stat-lbl">Labor Force Share</div>
+            <div class="stat-src">CPS 2024</div>
+          </div>
+        </div>
+
+        <div class="content-2col">
+          <div>
+            <h2>Executive Summary</h2>
+            <p>The United States admits approximately 1.18 million legal permanent residents annually under a system that allocates the majority of visas through family-sponsored channels. Immigration has been a defining economic and demographic force: the foreign-born population has grown from 9.6 million in 1970 to over 45 million today, reshaping labor markets, fiscal accounts, and regional demographics across all 50 states.</p>
+            <p>This country report presents disaggregated data on admission flows, visa category distribution, source-country composition, labor market outcomes, geographic settlement patterns, and the measurable effects of major legislative changes. Navigate through the indicator tabs above to explore each dimension.</p>
+
+            <h3 style="margin-top:1.5rem;">Key Takeaways</h3>
+            <div class="accordion-item open">
+              <button class="accordion-header">
+                Family reunification dominates the U.S. admission system
+                <span class="chevron">▾</span>
+              </button>
+              <div class="accordion-body" style="max-height:200px;">
+                <div class="accordion-body-inner">
+                  Approximately 65% of all permanent visas are allocated through family-sponsored preferences and immediate-relative admissions. This structural emphasis shapes the demographic and economic profile of new immigrants and differentiates the U.S. system fundamentally from Canada's economic-selection model.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">
+                Per-country ceilings create multi-decade backlogs
+                <span class="chevron">▾</span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  The 7% per-country cap on employment-based green cards generates wait times exceeding 50 years for Indian nationals in some categories. This bottleneck affects talent retention, workforce planning, and international competitiveness in high-skilled labor markets.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">
+                Immigrants drive disproportionate innovation and entrepreneurship
+                <span class="chevron">▾</span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  While comprising 14.3% of the population, immigrants account for approximately 25% of U.S. patent filings and have founded or co-founded over 40% of Fortune 500 companies. Immigrant entrepreneurship rates exceed those of native-born Americans across most demographic cohorts.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">
+                New-destination states are reshaping settlement geography
+                <span class="chevron">▾</span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  Since 2000, the fastest growth in immigrant population share has occurred in states outside the traditional six gateways — particularly in the Southeast and Mountain West. This dispersion creates new demands on local infrastructure, education, and social services in communities with limited prior experience receiving immigrants.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside>
+            <div class="sidebar-card">
+              <h4>U.S. Data Sources</h4>
+              <ul>
+                <li>DHS Yearbook of Immigration Statistics</li>
+                <li>American Community Survey (ACS)</li>
+                <li>Current Population Survey (CPS)</li>
+                <li>USCIS Administrative Data</li>
+                <li>National Academies of Sciences (2017)</li>
+                <li>Congressional Budget Office</li>
+              </ul>
+            </div>
+            <div class="sidebar-card">
+              <h4>Coverage</h4>
+              <p>Fiscal years 1970–2025 for admission flow data. Calendar year estimates for ACS and CPS microdata. Policy impact analysis covers major legislation from 1965 to present.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Admission Flows -->
+  <div id="tab-us-flows" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Annual Admission Flows</h2>
+        <p>Legal permanent resident admissions by fiscal year, with decomposition by major admission category and identification of structural breaks coinciding with legislative changes.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card span-2" id="fig-us-1">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — time series with recession shading</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure US-1</p>
+              <h4>Total LPR Admissions by Fiscal Year, 1970–2025</h4>
+              <p>Recession periods shaded. IRCA legalization spike visible in FY1989–1991. Source: DHS Yearbook.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-2">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — area chart</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure US-2</p>
+              <h4>Admissions by Region of Birth, 1970–2025</h4>
+              <p>Stacked area showing shift from European to Latin American and Asian dominance. Source: DHS.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-3">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — small multiples</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure US-3</p>
+              <h4>Top 10 Source Countries, Selected Decades</h4>
+              <p>Ranked lists for 1980s, 1990s, 2000s, 2010s, and 2020s. Source: DHS.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis">
+          <h3>Trend Analysis</h3>
+          <p>Annual LPR admissions have ranged from approximately 370,000 in FY1970 to peaks exceeding 1.8 million during IRCA legalizations (FY1989–1991). Excluding the IRCA adjustment, the steady-state level has trended upward from roughly 500,000 in the 1970s to approximately 1.0–1.2 million since 2000, driven primarily by growth in immediate-relative admissions (which are not numerically capped) and modest increases in employment-based allocations.</p>
+          <p>The source-country composition has undergone a structural transformation. In 1970, six of the top ten source countries were in Europe. By 2024, the top five source countries are Mexico, India, China, the Philippines, and the Dominican Republic, collectively accounting for approximately 40% of all admissions.</p>
+          <div class="callout">
+            <strong>Key finding placeholder:</strong> Specific quantitative measure of the structural break in source-country composition — e.g., the year in which non-European source countries first constituted a majority of admissions, or the Herfindahl index trend.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Visa Categories -->
+  <div id="tab-us-visa" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Visa Category Allocation</h2>
+        <p>Structural composition of the U.S. permanent immigration system by admission class, with analysis of backlog dynamics and per-country ceiling effects.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card" id="fig-us-4">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — treemap</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure US-4</p>
+              <h4>FY2024 Admissions by Visa Class</h4>
+              <p>Proportional treemap of all admission categories. Source: DHS.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-5">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — bar chart</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure US-5</p>
+              <h4>Employment-Based Backlog by Country</h4>
+              <p>Estimated wait times for EB-2 and EB-3 by country of chargeability. Source: USCIS, DOS.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis tone-teal">
+          <h3>Category Analysis</h3>
+          <p>The U.S. permanent immigration system is divided into five principal channels: immediate relatives of citizens (numerically unlimited), family-sponsored preferences (~226,000), employment-based preferences (~140,000 base), diversity lottery (55,000), and refugees/asylees (variable). The immediate-relative category has grown substantially as a share of total admissions, reflecting both demographic momentum and policy choices that have not expanded preference-category caps commensurately with demand.</p>
+          <p>The employment-based system faces acute congestion. The 7% per-country ceiling means that nationals of high-demand countries — particularly India — face wait times that exceed the working lifetime of an applicant. This dynamic creates significant talent-retention risks for the United States relative to competitor economies, including Canada, that do not impose comparable per-country limits.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Economic Impact -->
+  <div id="tab-us-econ" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Economic Contributions</h2>
+        <p>Labor force participation, earnings analysis, fiscal impact estimates, and innovation metrics for the U.S. immigrant population.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card" id="fig-us-6">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — grouped bar</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure US-6</p>
+              <h4>Employment and Earnings by Nativity</h4>
+              <p>LFPR, employment rate, and median weekly earnings. Source: CPS 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-7">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — donut + bar</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure US-7</p>
+              <h4>Immigrant Share by Industry Sector</h4>
+              <p>Sectors where immigrant workers exceed 20% of the workforce. Source: ACS 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card span-2" id="fig-us-8">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — horizontal bar</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure US-8</p>
+              <h4>Net Fiscal Impact by Education Level and Time Since Arrival</h4>
+              <p>Taxes paid minus benefits received, by educational attainment and decade of admission. Source: NAS 2017, CBO.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis tone-gold">
+          <h3>Economic Analysis</h3>
+          <p>Immigrants constitute approximately 17% of the U.S. civilian labor force. They are concentrated in sectors with persistent labor shortages: agriculture (estimated 73% of crop workers are foreign-born), construction (30%), accommodation and food services (28%), and healthcare support (25%). At the high-skill end, immigrants represent 29% of STEM workers and account for roughly 25% of U.S. patent filings.</p>
+          <p>The aggregate fiscal impact of immigration is net-positive at the federal level and varies at the state/local level depending on immigrant educational attainment, household size, and utilization of means-tested programs. The National Academies (2017) found that immigration generates a net positive fiscal contribution of $279,000 in present-value terms over a 75-year horizon when second-generation effects are included.</p>
+          <div class="callout">
+            <strong>Key finding placeholder:</strong> Updated fiscal estimate or entrepreneurship metric with source citation.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Geography -->
+  <div id="tab-us-geo" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Geographic Distribution</h2>
+        <p>State-level settlement patterns, new-destination growth trends, and urban-rural distribution of the immigrant population.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card span-2" id="fig-us-9">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — state-level choropleth</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure US-9</p>
+              <h4>Foreign-Born Population Share by State, 2024</h4>
+              <p>Percentage of state population that is foreign-born. Source: ACS 2024.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis tone-purple">
+          <h3>Settlement Analysis</h3>
+          <p>Six traditional gateway states — California, New York, Texas, Florida, New Jersey, and Illinois — account for roughly 65% of the foreign-born population. However, the fastest growth rates since 2000 have occurred in new-destination states: North Carolina, Georgia, Tennessee, Nevada, and Arkansas have seen their immigrant populations more than double. This geographic dispersion creates varied demands on education, healthcare, and language-access services at the local level.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Policy -->
+  <div id="tab-us-policy" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Policy Timeline and Legislative Impact</h2>
+        <p>Major U.S. immigration legislation and executive actions mapped against admission outcomes.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card span-2" id="fig-us-10">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — annotated timeline</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure US-10</p>
+              <h4>Legislative Milestones and Admission Volume, 1965–2025</h4>
+              <p>Hart-Celler (1965), IRCA (1986), IMMACT (1990), IIRIRA (1996), REAL ID (2005), DACA (2012). Source: DHS, compiled.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis tone-rose">
+          <h3>Legislative Impact Assessment</h3>
+          <p>Each major piece of immigration legislation has produced measurable, and often lagged, effects on admission volumes, category distributions, and enforcement metrics. The Immigration and Nationality Act of 1965 triggered a structural shift in source-country composition that unfolded over two decades. IRCA produced a temporary spike in admissions through legalization but did not achieve its stated goal of reducing unauthorized immigration. IIRIRA introduced expedited removal and 3/10-year bars that continue to shape unauthorized-to-authorized transition dynamics.</p>
+          <p>This section will present regression-discontinuity and event-study estimates quantifying the causal impact of major legislative changes on admission flows, processing times, and enforcement outcomes.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Cross-link -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <a href="canada.html" class="cross-link-bar">
+        <div>
+          <h4>🇨🇦 Canada Country Report</h4>
+          <p>Compare with Canada's points-based selection system, Express Entry outcomes, and provincial distribution.</p>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-org">
+          <h4>Charles River Economics Labs</h4>
+          <p>In partnership with Harvard University and the Bank of Canada</p>
+          <div class="footer-logos">
+            <a href="https://www.charlesrivereconomicslabs.org/" target="_blank" rel="noopener noreferrer"><img src="crel-logo.png" class="footer-logo crel-logo" alt="CREL" /></a>
+            <a href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer"><img src="harvard-logo.svg" class="footer-logo harvard-logo" alt="Harvard" /></a>
+            <a href="https://www.bankofcanada.ca/" target="_blank" rel="noopener noreferrer"><img src="boc-logo.png" class="footer-logo boc-logo" alt="Bank of Canada" /></a>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <strong>Charles River Economics Labs</strong><br />
+          <a href="mailto:charlesrivereconomicslabs@gmail.com">charlesrivereconomicslabs@gmail.com</a><br />
+          <a href="mailto:akilansankaran@college.harvard.edu">akilansankaran@college.harvard.edu</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Charles River Economics Labs. All rights reserved.</span>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="comparison.html">Comparison</a></li>
+          <li><a href="us.html">United States</a></li>
+          <li><a href="canada.html">Canada</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search overlay -->
+  <div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-header">
+        <span class="search-icon">&#x2315;</span>
+        <input type="text" class="search-input" placeholder="Search figures, charts, analysis..." />
+        <button class="search-close" onclick="closeSearch()">&times;</button>
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+  <script src="search.js"></script>
+</body>
+</html>

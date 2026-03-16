@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Immigration Tracker — Charles River Economics Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Institutional partner bar -->
+  <div class="inst-bar">
+    <div class="container">
+      <div class="inst-logos">
+        <a href="https://www.charlesrivereconomicslabs.org/" target="_blank" rel="noopener noreferrer" class="inst-logo-link crel-brand">
+          <img src="crel-logo.png" class="crel-logo" alt="CREL" />
+          <span>Charles River Economics Labs</span>
+        </a>
+        <div class="inst-sep"></div>
+        <a href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer" class="inst-logo-link">
+          <img src="harvard-logo.svg" class="harvard-logo" alt="Harvard" />
+          <span>Harvard University</span>
+        </a>
+        <div class="inst-sep"></div>
+        <a href="https://www.bankofcanada.ca/" target="_blank" rel="noopener noreferrer" class="inst-logo-link">
+          <img src="boc-logo.png" class="boc-logo" alt="Bank of Canada" />
+          <span>Bank of Canada</span>
+        </a>
+      </div>
+      <span class="data-date-badge">Data as of March 2026</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <button class="nav-hamburger" aria-label="Menu" onclick="this.closest('.navbar').classList.toggle('nav-open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="comparison.html">Comparison</a></li>
+        <li><a href="us.html">United States</a></li>
+        <li><a href="canada.html">Canada</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Two nations, one question: immigration within and across the U.S. and Canada.</h1>
+      <hr class="header-rule" />
+      <div class="desc-group">
+        <p class="desc-card desc-mission">Developed at Harvard by Charles River Economics Labs, this tracker monitors immigration flows, policy frameworks, labor market integration, and fiscal outcomes across the United States and Canada.</p>
+        <p class="desc-card desc-method"><strong>Methodology:</strong> We integrate standardized, cross-nationally comparable metrics derived from administrative records, census microdata, cross-sectional datasets, and longitudinal surveys to provide consistent measures of immigration patterns and outcomes across both countries.</p>
+      </div>
+      <button class="search-bar-trigger" onclick="openSearch()">
+        <span class="search-bar-icon">&#x2315;</span>
+        <span class="search-bar-text">Search for a specific parameter<span class="search-dots"></span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Interactive flowchart -->
+  <section class="flowchart-section">
+    <div class="container">
+      <h2 class="fc-title">Analysis Framework</h2>
+      <p class="fc-subtitle">Click a country to explore its analytical properties. Click subcategory to navigate to corresponding page. </p>
+      <div id="flowchart-canvas"></div>
+    </div>
+  </section>
+
+  <!-- Landing cards -->
+  <section class="landing-section">
+    <div class="container">
+      <div class="landing-cards">
+
+        <a href="comparison.html" class="landing-card lc-comparison">
+          <div class="lc-icon">&#x2696;</div>
+          <h2>Cross-Country Comparison</h2>
+          <p>Side-by-side analysis of admission volumes, labor market integration, fiscal impact, and policy architecture across both nations.</p>
+          <div class="lc-tags">
+            <span>Admission Flows</span>
+            <span>Labor Market</span>
+            <span>Fiscal Impact</span>
+            <span>Demography</span>
+            <span>Policy</span>
+          </div>
+          <div class="lc-stats">
+            <div><strong>13</strong> figures</div>
+            <div><strong>6</strong> analysis sections</div>
+          </div>
+          <span class="lc-cta">Explore comparison &#x2192;</span>
+        </a>
+
+        <a href="us.html" class="landing-card lc-us">
+          <div class="lc-icon">&#x1F1FA;&#x1F1F8;</div>
+          <h2>United States</h2>
+          <p>LPR admission trends, visa category breakdowns, economic contributions, geographic distribution, and legislative milestones from 1970 to present.</p>
+          <div class="lc-tags">
+            <span>Admission Flows</span>
+            <span>Visa Categories</span>
+            <span>Economic Impact</span>
+            <span>Geography</span>
+            <span>Policy</span>
+          </div>
+          <div class="lc-stats">
+            <div><strong>10</strong> figures</div>
+            <div><strong>5</strong> analysis sections</div>
+          </div>
+          <span class="lc-cta">View U.S. report &#x2192;</span>
+        </a>
+
+        <a href="canada.html" class="landing-card lc-canada">
+          <div class="lc-icon">&#x1F1E8;&#x1F1E6;</div>
+          <h2>Canada</h2>
+          <p>Express Entry performance, Provincial Nominee expansion, earnings trajectories, regional settlement patterns, and demographic profiles.</p>
+          <div class="lc-tags">
+            <span>Admission Flows</span>
+            <span>Express Entry</span>
+            <span>Economic Integration</span>
+            <span>Provincial Data</span>
+            <span>Demographics</span>
+          </div>
+          <div class="lc-stats">
+            <div><strong>14</strong> figures</div>
+            <div><strong>5</strong> analysis sections</div>
+          </div>
+          <span class="lc-cta">View Canada report &#x2192;</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-org">
+          <h4>Charles River Economics Labs</h4>
+          <p>In partnership with Harvard University and the Bank of Canada</p>
+          <div class="footer-logos">
+            <a href="https://www.charlesrivereconomicslabs.org/" target="_blank" rel="noopener noreferrer"><img src="crel-logo.png" class="footer-logo crel-logo" alt="CREL" /></a>
+            <a href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer"><img src="harvard-logo.svg" class="footer-logo harvard-logo" alt="Harvard" /></a>
+            <a href="https://www.bankofcanada.ca/" target="_blank" rel="noopener noreferrer"><img src="boc-logo.png" class="footer-logo boc-logo" alt="Bank of Canada" /></a>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <strong>Charles River Economics Labs</strong><br />
+          <a href="mailto:charlesrivereconomicslabs@gmail.com">charlesrivereconomicslabs@gmail.com</a><br />
+          <a href="mailto:akilansankaran@college.harvard.edu">akilansankaran@college.harvard.edu</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Charles River Economics Labs. All rights reserved.</span>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="comparison.html">Comparison</a></li>
+          <li><a href="us.html">United States</a></li>
+          <li><a href="canada.html">Canada</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search overlay -->
+  <div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-header">
+        <span class="search-icon">&#x2315;</span>
+        <input type="text" class="search-input" placeholder="Search figures, charts, analysis..." />
+        <button class="search-close" onclick="closeSearch()">&times;</button>
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+  <script src="search.js"></script>
+  <script src="flowchart.js"></script>
+</body>
+</html>

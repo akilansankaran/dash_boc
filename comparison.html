@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cross-Country Comparison — Charles River Economics Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-comparison">
+
+  <!-- Institutional partner bar -->
+  <div class="inst-bar">
+    <div class="container">
+      <div class="inst-logos">
+        <a href="https://www.charlesrivereconomicslabs.org/" target="_blank" rel="noopener noreferrer" class="inst-logo-link crel-brand">
+          <img src="crel-logo.png" class="crel-logo" alt="CREL" />
+          <span>Charles River Economics Labs</span>
+        </a>
+        <div class="inst-sep"></div>
+        <a href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer" class="inst-logo-link">
+          <img src="harvard-logo.svg" class="harvard-logo" alt="Harvard" />
+          <span>Harvard University</span>
+        </a>
+        <div class="inst-sep"></div>
+        <a href="https://www.bankofcanada.ca/" target="_blank" rel="noopener noreferrer" class="inst-logo-link">
+          <img src="boc-logo.png" class="boc-logo" alt="Bank of Canada" />
+          <span>Bank of Canada</span>
+        </a>
+      </div>
+      <span class="data-date-badge">Data as of March 2026</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <button class="nav-hamburger" aria-label="Menu" onclick="this.closest('.navbar').classList.toggle('nav-open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="comparison.html" class="active">Comparison</a></li>
+        <li><a href="us.html">United States</a></li>
+        <li><a href="canada.html">Canada</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">/</span>
+        <span>Cross-Country Comparison</span>
+      </div>
+      <h1>Cross-Country Comparison: U.S. and Canada Immigration Systems</h1>
+      <hr class="header-rule" />
+      <p class="subtitle">Track and compare immigration flows, policy frameworks, labor market integration, and fiscal outcomes across North America's two largest economies. This tracker provides standardized, cross-nationally comparable metrics drawn from administrative records, census microdata, and longitudinal surveys.</p>
+      <button class="search-bar-trigger" onclick="openSearch()">
+        <span class="search-bar-icon">&#x2315;</span>
+        <span class="search-bar-text">Search for a specific parameter<span class="search-dots"></span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Indicator tabs -->
+  <div class="indicator-bar">
+    <div class="container">
+      <button class="indicator-tab active" data-tab="overview"><span class="tab-icon">◈</span> Overview</button>
+      <button class="indicator-tab" data-tab="flows"><span class="tab-icon">▤</span> Admission Flows</button>
+      <button class="indicator-tab" data-tab="labor"><span class="tab-icon">▦</span> Labor Market</button>
+      <button class="indicator-tab" data-tab="fiscal"><span class="tab-icon">▧</span> Fiscal Impact</button>
+      <button class="indicator-tab" data-tab="demography"><span class="tab-icon">▩</span> Demography</button>
+      <button class="indicator-tab" data-tab="policy"><span class="tab-icon">▨</span> Policy</button>
+    </div>
+  </div>
+
+  <!-- TAB: Overview -->
+  <div id="tab-overview" class="tab-panel active">
+    <section class="section">
+      <div class="container">
+
+        <div class="stat-cards">
+          <div class="stat-card accent-blue">
+            <div class="stat-val">1.18M</div>
+            <div class="stat-lbl">U.S. Permanent Admissions</div>
+            <div class="stat-src">FY 2024 · DHS</div>
+          </div>
+          <div class="stat-card accent-red">
+            <div class="stat-val">405,000</div>
+            <div class="stat-lbl">Canada Perm. Residents</div>
+            <div class="stat-src">CY 2024 · IRCC</div>
+          </div>
+          <div class="stat-card accent-gold">
+            <div class="stat-val">14.3%</div>
+            <div class="stat-lbl">U.S. Foreign-Born Share</div>
+            <div class="stat-src">ACS 2024</div>
+          </div>
+          <div class="stat-card accent-teal">
+            <div class="stat-val">23.0%</div>
+            <div class="stat-lbl">Canada Foreign-Born Share</div>
+            <div class="stat-src">Census 2021</div>
+          </div>
+        </div>
+
+        <div class="content-2col">
+          <div>
+            <div class="scope-card">
+              <h2>Scope and Objective</h2>
+              <p>The United States and Canada share a continent and deep economic integration, yet their immigration systems reflect fundamentally different philosophies of selection and settlement. The U.S. system is anchored in family reunification, with significant humanitarian and diversity components; Canada has built its framework around economic selection through the points-based Comprehensive Ranking System and Provincial Nominee Programs.</p>
+              <p>This tracker presents side-by-side data across common dimensions — admission volumes, source-country composition, labor market integration, fiscal impact, and regional distribution — using harmonized definitions that allow for meaningful cross-national comparison. All volume-based measures are reported both in absolute terms and per-capita rates.</p>
+            </div>
+
+            <h3 style="margin-top:1.5rem;">Side-by-Side Comparison</h3>
+            <table class="cmp-table">
+              <thead>
+                <tr>
+                  <th>Indicator</th>
+                  <th class="country-hd">United States</th>
+                  <th class="country-hd">Canada</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Annual permanent admissions</td>
+                  <td class="mono">1,180,000</td>
+                  <td class="mono">405,000</td>
+                </tr>
+                <tr>
+                  <td>Per-capita admission rate</td>
+                  <td class="mono">3.5 / 1,000</td>
+                  <td class="mono">10.4 / 1,000</td>
+                </tr>
+                <tr>
+                  <td>Foreign-born population share</td>
+                  <td class="mono">14.3%</td>
+                  <td class="mono">23.0%</td>
+                </tr>
+                <tr>
+                  <td>Economic class share of admissions</td>
+                  <td class="mono">~20%</td>
+                  <td class="mono">~58%</td>
+                </tr>
+                <tr>
+                  <td>Family class share of admissions</td>
+                  <td class="mono">~65%</td>
+                  <td class="mono">~27%</td>
+                </tr>
+                <tr>
+                  <td>Immigrant labor force participation</td>
+                  <td class="mono">66.4%</td>
+                  <td class="mono">63.8%</td>
+                </tr>
+                <tr>
+                  <td>Immigrant GDP contribution (est.)</td>
+                  <td class="mono">$2.6T</td>
+                  <td class="mono">$320B (PPP)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 style="margin-top:2rem;">Country Reports</h3>
+            <div class="country-nav-grid" style="margin-top:.75rem;">
+              <a href="us.html" class="country-nav-card card-us">
+                <div class="cn-flag">&#x1F1FA;&#x1F1F8;</div>
+                <div class="cn-body">
+                  <h3>United States</h3>
+                  <p>Visa category analysis, demographic trends, labor market outcomes, and policy impact assessment from 1970 to present.</p>
+                  <span class="cn-link">View report &#x2192;</span>
+                </div>
+              </a>
+              <a href="canada.html" class="country-nav-card card-ca">
+                <div class="cn-flag">&#x1F1E8;&#x1F1E6;</div>
+                <div class="cn-body">
+                  <h3>Canada</h3>
+                  <p>Express Entry trends, Provincial Nominee analysis, earnings trajectories, and settlement distribution data.</p>
+                  <span class="cn-link">View report &#x2192;</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <aside>
+            <div class="sidebar-card accent-blue data-sources-card">
+              <h4>Data Sources</h4>
+              <p class="ds-group-label" style="color:#60a5fa;">United States</p>
+              <div class="ds-item"><span class="ds-badge" style="background:rgba(59,130,246,.12);color:#60a5fa;">ACS</span><span>American Community Survey</span></div>
+              <div class="ds-item"><span class="ds-badge" style="background:rgba(59,130,246,.12);color:#60a5fa;">Census</span><span>U.S. Decennial Census</span></div>
+              <p class="ds-group-label" style="color:#f87171; margin-top:.8rem;">Canada</p>
+              <div class="ds-item"><span class="ds-badge" style="background:rgba(239,68,68,.12);color:#f87171;">Census</span><span>2021 Canadian Census</span></div>
+            </div>
+            <div class="sidebar-card accent-gold">
+              <h4>Methodology Notes</h4>
+              <p>Visa categories are mapped to a common taxonomy (economic, family, humanitarian, other). Income estimates use PPP-adjusted USD via OECD conversion factors. See individual country pages for source-specific documentation.</p>
+            </div>
+            <div class="sidebar-card accent-teal">
+              <h4>Partners</h4>
+              <p style="margin-bottom:.4rem;">Charles River Economics Labs</p>
+              <p style="margin-bottom:.4rem;">Harvard University</p>
+              <p>Bank of Canada</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Admission Flows -->
+  <div id="tab-flows" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Admission Flows: United States vs. Canada</h2>
+        <p>Comparative trends in annual permanent admissions, with harmonized category breakdowns and population-adjusted rates.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card span-2" id="fig-1">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — dual-axis time series</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure 1</p>
+              <h4>Annual Permanent Admissions, U.S. vs. Canada, 1970–2025</h4>
+              <p>Left axis: absolute admissions. Right axis: per-1,000 population rate. Sources: DHS, IRCC.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-2">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — stacked bar</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure 2</p>
+              <h4>U.S. Admission Class Distribution</h4>
+              <p>Family, employment, diversity, and humanitarian shares. Source: DHS.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-3">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — stacked bar</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure 3</p>
+              <h4>Canada Admission Class Distribution</h4>
+              <p>Economic, family, refugee, and humanitarian shares. Source: IRCC.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis">
+          <h3>Comparative Observations</h3>
+          <p>Despite a population roughly one-ninth the size of the United States, Canada admits permanent residents at a significantly higher per-capita rate. The composition of these flows differs markedly: the U.S. system allocates approximately 65% of permanent visas through family-sponsored channels, while Canada directs roughly 58% of admissions through economic-class programs designed to select for human capital and labor market readiness.</p>
+          <p>This structural divergence produces measurably different immigrant profiles at landing, with implications for initial earnings, credential utilization, and sectoral distribution that are explored in the Labor Market tab.</p>
+          <div class="callout">
+            <strong>Key finding placeholder:</strong> Comparative statistic quantifying the difference in per-capita admission rates and the divergence in economic-class share between the two systems.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Labor Market -->
+  <div id="tab-labor" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Labor Market Integration</h2>
+        <p>Cross-national comparison of immigrant employment rates, earnings trajectories, and sectoral concentration.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card" id="fig-4">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — grouped bar</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure 4</p>
+              <h4>Labor Force Participation by Nativity</h4>
+              <p>Immigrant vs. native-born employment rates and LFPR. Sources: CPS (U.S.), LFS (Canada).</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-5">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — line chart</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure 5</p>
+              <h4>Earnings Convergence, Years Since Landing</h4>
+              <p>Median earnings relative to native-born at 1, 3, 5, and 10 years post-admission. Sources: ACS, IMDB.</p>
+            </div>
+          </div>
+          <div class="fig-card span-2" id="fig-6">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — heatmap</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure 6</p>
+              <h4>Sectoral Employment Concentration, Immigrants vs. Native-Born</h4>
+              <p>Industry-level employment shares and location quotients for immigrant workers in both countries.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis tone-teal">
+          <h3>Comparative Analysis</h3>
+          <p>Immigrant labor force participation in the United States marginally exceeds that in Canada (66.4% vs. 63.8%), though this aggregate figure obscures substantial heterogeneity by admission class, source region, and time since landing. In both countries, immigrants are overrepresented in certain sectors — notably healthcare, STEM, food services, and construction — though the degree of concentration varies.</p>
+          <p>Earnings convergence trajectories differ between the two systems. U.S. immigrants, on average, reach native-born parity more quickly in absolute terms, though this partly reflects the lower average educational attainment of the U.S. native-born comparison group. Canadian economic-class immigrants exhibit higher initial credentials but face steeper credential-recognition barriers, resulting in a more protracted convergence timeline.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Fiscal Impact -->
+  <div id="tab-fiscal" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Fiscal Impact</h2>
+        <p>Estimated tax contributions, public-service utilization, and net fiscal position of immigrant populations in both countries.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card span-2" id="fig-7">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — dual bar chart</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure 7</p>
+              <h4>Net Fiscal Contribution by Immigration Cohort, U.S. vs. Canada</h4>
+              <p>Taxes paid minus public benefits received, by years since admission. PPP-adjusted USD. Sources: CBO, PBO.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-8">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — waterfall chart</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure 8</p>
+              <h4>U.S. Immigrant Fiscal Balance by Level of Government</h4>
+              <p>Federal, state, and local contributions and costs. Source: NAS 2017, updated.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-9">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — waterfall chart</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure 9</p>
+              <h4>Canada Immigrant Fiscal Balance by Level of Government</h4>
+              <p>Federal, provincial, and municipal contributions and costs. Source: PBO, C.D. Howe.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis tone-gold">
+          <h3>Comparative Observations</h3>
+          <p>The fiscal profile of immigrants depends critically on selection criteria, age at arrival, and educational attainment. Canada's economic-class emphasis tends to produce a more immediately positive fiscal balance, while the U.S. family-reunification model generates a wider distribution of fiscal outcomes that converges favorably over multi-generational time horizons.</p>
+          <div class="callout">
+            <strong>Key finding placeholder:</strong> Estimated net fiscal contribution differential between economic-class and family-class immigrants at the 10-year and 20-year marks.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Demography -->
+  <div id="tab-demography" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Demographic Profiles</h2>
+        <p>Age distribution, educational attainment, source-country composition, and language characteristics of immigrant populations.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card" id="fig-10">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — population pyramid</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure 10</p>
+              <h4>Age-Sex Distribution, Foreign-Born Population</h4>
+              <p>U.S. and Canada immigrant populations by age group. Sources: ACS 2024, Census 2021.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-11">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — parallel bar</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure 11</p>
+              <h4>Educational Attainment, Immigrants vs. Native-Born</h4>
+              <p>Share by highest credential: less than HS, HS, Bachelor's, Graduate. Both countries.</p>
+            </div>
+          </div>
+          <div class="fig-card span-2" id="fig-12">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — dual choropleth map</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure 12</p>
+              <h4>Top Source Countries, U.S. and Canada, 2024</h4>
+              <p>Side-by-side choropleth of permanent admissions by country of birth. Sources: DHS, IRCC.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis tone-purple">
+          <h3>Comparative Analysis</h3>
+          <p>Canada's immigrant population skews more heavily toward working-age cohorts and higher educational credentials, reflecting the CRS selection model. The U.S. immigrant population is more age-diverse, with larger shares at both younger and older age groups due to the family-reunification pathway. Source-country composition has converged somewhat in recent decades, with India and China now among the top three source countries for both nations.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Policy -->
+  <div id="tab-policy" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Policy Frameworks</h2>
+        <p>Side-by-side comparison of legislative architectures, selection mechanisms, and processing pipelines.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card span-2" id="fig-13">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — annotated dual timeline</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure 13</p>
+              <h4>Legislative Timeline, U.S. and Canada, 1965–2025</h4>
+              <p>Major immigration legislation overlaid on admission volumes. Parallel timelines for both countries.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top:1.5rem;">System Architecture Comparison</h3>
+        <table class="cmp-table" style="margin-top:.75rem;">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th class="country-hd">United States</th>
+              <th class="country-hd">Canada</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Primary selection mechanism</td>
+              <td>Family sponsorship + employer petition</td>
+              <td>Points-based ranking (CRS)</td>
+            </tr>
+            <tr>
+              <td>Annual planning target</td>
+              <td>No unified target; category-specific caps</td>
+              <td>Multi-year Immigration Levels Plan</td>
+            </tr>
+            <tr>
+              <td>Sub-national role</td>
+              <td>Limited (state-level advocacy only)</td>
+              <td>Provincial Nominee Programs (PNP)</td>
+            </tr>
+            <tr>
+              <td>Processing authority</td>
+              <td>USCIS / DOS / EOIR</td>
+              <td>IRCC (centralized)</td>
+            </tr>
+            <tr>
+              <td>Pathway to citizenship</td>
+              <td>5 years after LPR (3 if married to citizen)</td>
+              <td>3 years after PR status</td>
+            </tr>
+            <tr>
+              <td>Backlog / queue</td>
+              <td>Significant (decades for some categories)</td>
+              <td>Minimal (target: 6 months for EE)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="analysis tone-rose" style="margin-top:2rem;">
+          <h3>Framework Analysis</h3>
+          <p>The structural divergence between the two systems is most visible in the ratio of economic-to-family admissions and in processing timelines. The U.S. per-country ceiling system creates substantial backlogs for nationals of high-demand countries (India, China, Philippines, Mexico), while Canada's uncapped, score-ranked model processes most economic-class applications within six months. These architectural differences generate measurably different immigrant profiles at landing, with downstream consequences for integration trajectories examined in the Labor Market and Fiscal Impact tabs above.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-org">
+          <h4>Charles River Economics Labs</h4>
+          <p>In partnership with Harvard University and the Bank of Canada</p>
+          <div class="footer-logos">
+            <a href="https://www.charlesrivereconomicslabs.org/" target="_blank" rel="noopener noreferrer"><img src="crel-logo.png" class="footer-logo crel-logo" alt="CREL" /></a>
+            <a href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer"><img src="harvard-logo.svg" class="footer-logo harvard-logo" alt="Harvard" /></a>
+            <a href="https://www.bankofcanada.ca/" target="_blank" rel="noopener noreferrer"><img src="boc-logo.png" class="footer-logo boc-logo" alt="Bank of Canada" /></a>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <strong>Charles River Economics Labs</strong><br />
+          <a href="mailto:charlesrivereconomicslabs@gmail.com">charlesrivereconomicslabs@gmail.com</a><br />
+          <a href="mailto:akilansankaran@college.harvard.edu">akilansankaran@college.harvard.edu</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Charles River Economics Labs. All rights reserved.</span>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="comparison.html">Comparison</a></li>
+          <li><a href="us.html">United States</a></li>
+          <li><a href="canada.html">Canada</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search overlay -->
+  <div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-header">
+        <span class="search-icon">&#x2315;</span>
+        <input type="text" class="search-input" placeholder="Search figures, charts, analysis..." />
+        <button class="search-close" onclick="closeSearch()">&times;</button>
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+  <script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canada — Immigration Analysis | CREL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-canada">
+
+  <!-- Institutional partner bar -->
+  <div class="inst-bar">
+    <div class="container">
+      <div class="inst-logos">
+        <a href="https://www.charlesrivereconomicslabs.org/" target="_blank" rel="noopener noreferrer" class="inst-logo-link crel-brand">
+          <img src="crel-logo.png" class="crel-logo" alt="CREL" />
+          <span>Charles River Economics Labs</span>
+        </a>
+        <div class="inst-sep"></div>
+        <a href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer" class="inst-logo-link">
+          <img src="harvard-logo.svg" class="harvard-logo" alt="Harvard" />
+          <span>Harvard University</span>
+        </a>
+        <div class="inst-sep"></div>
+        <a href="https://www.bankofcanada.ca/" target="_blank" rel="noopener noreferrer" class="inst-logo-link">
+          <img src="boc-logo.png" class="boc-logo" alt="Bank of Canada" />
+          <span>Bank of Canada</span>
+        </a>
+      </div>
+      <span class="data-date-badge">Data as of March 2026</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <button class="nav-hamburger" aria-label="Menu" onclick="this.closest('.navbar').classList.toggle('nav-open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="comparison.html">Comparison</a></li>
+        <li><a href="us.html">United States</a></li>
+        <li><a href="canada.html" class="active">Canada</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Comparison</a>
+        <span class="sep">/</span>
+        <span>Canada</span>
+      </div>
+      <p class="label-sm">Country Report &middot; Canada</p>
+      <h1>Canada: Immigration Programs, Integration, and Economic Outcomes</h1>
+      <hr class="header-rule" />
+      <p class="subtitle">Analysis of permanent resident admissions, Express Entry performance, Provincial Nominee Program expansion, labor market integration trajectories, and regional settlement patterns from 1970 to present.</p>
+      <button class="search-bar-trigger" onclick="openSearch()">
+        <span class="search-bar-icon">&#x2315;</span>
+        <span class="search-bar-text">Search for a specific parameter<span class="search-dots"></span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Indicator tabs -->
+  <div class="indicator-bar">
+    <div class="container">
+      <button class="indicator-tab active" data-tab="ca-overview"><span class="tab-icon">◈</span> Overview</button>
+      <button class="indicator-tab" data-tab="ca-flows"><span class="tab-icon">▤</span> Admission Flows</button>
+      <button class="indicator-tab" data-tab="ca-ee"><span class="tab-icon">▦</span> Express Entry</button>
+      <button class="indicator-tab" data-tab="ca-econ"><span class="tab-icon">▧</span> Economic Integration</button>
+      <button class="indicator-tab" data-tab="ca-prov"><span class="tab-icon">▩</span> Provincial Data</button>
+      <button class="indicator-tab" data-tab="ca-demo"><span class="tab-icon">▨</span> Demographics</button>
+    </div>
+  </div>
+
+  <!-- TAB: Overview -->
+  <div id="tab-ca-overview" class="tab-panel active">
+    <section class="section">
+      <div class="container">
+        <div class="stats-strip">
+          <div class="stat-cell">
+            <div class="stat-val">405K</div>
+            <div class="stat-lbl">Permanent Residents</div>
+            <div class="stat-src">CY 2024</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-val">8.3M</div>
+            <div class="stat-lbl">Foreign-Born Residents</div>
+            <div class="stat-src">Census 2021</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-val">23.0%</div>
+            <div class="stat-lbl">Population Share</div>
+            <div class="stat-src">Foreign-Born</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-val">$320B</div>
+            <div class="stat-lbl">GDP Contribution</div>
+            <div class="stat-src">PPP-Adjusted</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-val">~58%</div>
+            <div class="stat-lbl">Economic Class Share</div>
+            <div class="stat-src">IRCC 2024</div>
+          </div>
+        </div>
+
+        <div class="content-2col">
+          <div>
+            <h2>Executive Summary</h2>
+            <p>Canada operates one of the world's most explicitly economic-selection-oriented immigration systems. Through the Express Entry management system and expanding Provincial Nominee Programs, Canada admitted 405,000 permanent residents in 2024, maintaining one of the highest per-capita immigration rates among OECD countries. The foreign-born share of the population (23.0%) is the highest among G7 nations.</p>
+            <p>This country report provides disaggregated analysis of admission flows by stream, Express Entry CRS score dynamics, provincial settlement patterns, earnings convergence trajectories, and the demographic profile of Canada's immigrant population. Navigate through the indicator tabs above to explore each dimension.</p>
+
+            <h3 style="margin-top:1.5rem;">Key Takeaways</h3>
+            <div class="accordion-item open">
+              <button class="accordion-header">
+                Economic-class selection drives the majority of admissions
+                <span class="chevron">▾</span>
+              </button>
+              <div class="accordion-body" style="max-height:200px;">
+                <div class="accordion-body-inner">
+                  Approximately 58% of permanent residents are admitted through economic programs (Federal Skilled Worker, Canadian Experience Class, Provincial Nominees). This human-capital focus produces an immigrant population with higher average educational attainment than the Canadian-born population, though credential recognition remains an integration barrier.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">
+                Express Entry has compressed processing to under 6 months
+                <span class="chevron">▾</span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  Since its launch in 2015, Express Entry has achieved a median processing time of approximately 5–6 months for the majority of applicants, compared to multi-year timelines under the predecessor system. Category-based selection rounds introduced in 2023 allow targeted draws for priority occupations.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">
+                PNPs have reshaped geographic settlement patterns
+                <span class="chevron">▾</span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  Provincial Nominee Program nominations have grown from under 1,000 in 1999 to over 100,000 annually, directing a growing share of immigrants to Atlantic Canada, the Prairies, and other regions outside the Toronto-Vancouver-Montreal corridor. Retention rates vary by province.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">
+                Earnings convergence remains a persistent policy challenge
+                <span class="chevron">▾</span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">
+                  Despite high initial credentials, immigrants to Canada experience a well-documented initial earnings gap relative to Canadian-born workers. IMDB data show that convergence takes approximately 10–15 years for economic-class immigrants and longer for family-class and refugee arrivals. Credential recognition and Canadian experience requirements are key friction points.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside>
+            <div class="sidebar-card">
+              <h4>Canada Data Sources</h4>
+              <ul>
+                <li>IRCC Open Data Portal</li>
+                <li>Statistics Canada (Census, IMDB)</li>
+                <li>Labour Force Survey (LFS)</li>
+                <li>Express Entry Rounds Data</li>
+                <li>Parliamentary Budget Officer</li>
+                <li>C.D. Howe Institute</li>
+              </ul>
+            </div>
+            <div class="sidebar-card">
+              <h4>Coverage</h4>
+              <p>Calendar years 1970–2025 for admission volumes. Express Entry data from January 2015 to present. Census microdata from 1991, 1996, 2001, 2006, 2011, 2016, and 2021. IMDB tax linkage data through 2022.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Admission Flows -->
+  <div id="tab-ca-flows" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Annual Admission Flows</h2>
+        <p>Permanent resident admissions by calendar year compared to government Immigration Levels Plan targets, with stream-level decomposition.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card span-2" id="fig-ca-1">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — target vs. actual time series</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure CA-1</p>
+              <h4>Levels Plan Targets vs. Actual Admissions, 1990–2025</h4>
+              <p>Government targets (dashed) vs. actual landings by year. Source: IRCC.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-ca-2">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — area chart</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure CA-2</p>
+              <h4>Admissions by Source Region, 1980–2025</h4>
+              <p>Shift from European to South/East Asian and African source regions. Source: IRCC.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-ca-3">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — stream breakdown</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure CA-3</p>
+              <h4>Admissions by Immigration Class, 2024</h4>
+              <p>Economic, family, refugee/protected persons, and H&amp;C. Source: IRCC.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis">
+          <h3>Flow Analysis</h3>
+          <p>Canada's permanent immigration volumes have increased substantially from approximately 85,000 in 1985 to 405,000 in 2024, with the most aggressive growth occurring under the 2021–2023 Immigration Levels Plans. The government's multi-year planning approach — unique among major immigration countries — allows for announced targets that signal anticipated volumes to provinces, settlement agencies, and labor markets.</p>
+          <p>Source-country composition has shifted dramatically. In 1980, the top five source countries were the United Kingdom, India, Vietnam, Hong Kong, and the Philippines. By 2024, India alone accounts for approximately 25% of all permanent residents, followed by the Philippines, China, Nigeria, and Afghanistan.</p>
+          <div class="callout ca">
+            <strong>Key finding placeholder:</strong> Quantitative measure of the gap between Levels Plan targets and actual admissions over the past decade, and the correlation with processing capacity constraints.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Express Entry -->
+  <div id="tab-ca-ee" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Express Entry System Performance</h2>
+        <p>CRS score dynamics, draw frequency, category-based selection, and applicant profile trends since January 2015.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card span-2" id="fig-ca-4">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — CRS cutoff time series</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure CA-4</p>
+              <h4>Express Entry Minimum CRS Score by Invitation Round, 2015–2025</h4>
+              <p>All-program draws and category-based draws shown separately. COVID pause period indicated. Source: IRCC.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-ca-5">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — histogram</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure CA-5</p>
+              <h4>CRS Score Distribution of Invited Applicants, 2024</h4>
+              <p>Distribution by 10-point bins. Median and interquartile range indicated. Source: IRCC.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-ca-6">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — category pie</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure CA-6</p>
+              <h4>Invitations by Program Stream, 2024</h4>
+              <p>FSWP, CEC, PNP-linked, and category-based (healthcare, STEM, French). Source: IRCC.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis tone-teal">
+          <h3>Express Entry Analysis</h3>
+          <p>The Express Entry system has undergone significant evolution since its 2015 launch. Initial draws invited candidates with CRS scores above 450; subsequent rounds saw cutoffs decline to the 440–470 range as pool size grew. The introduction of category-based selection rounds in 2023 — targeting healthcare workers, STEM professionals, French-language speakers, trade workers, and agriculture/agri-food workers — has diversified the profile of invited applicants and created multiple effective cutoff tiers within the system.</p>
+          <p>Processing time has been a key performance indicator. After deterioration during the COVID-19 period (median times exceeding 12 months), IRCC has restored processing to approximately 5–6 months for the majority of Express Entry applications, meeting its stated service standard.</p>
+          <div class="callout ca">
+            <strong>Key finding placeholder:</strong> Quantitative trend in CRS cutoff scores and the measured effect of category-based draws on the occupational distribution of invited applicants.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Economic Integration -->
+  <div id="tab-ca-econ" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Economic Integration and Earnings</h2>
+        <p>Labor market outcomes, earnings trajectories, credential recognition, and sectoral employment patterns for immigrant workers in Canada.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card" id="fig-ca-7">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — cohort earnings chart</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure CA-7</p>
+              <h4>Earnings Trajectories by Landing Cohort, 1–10 Years</h4>
+              <p>Median T4 earnings by years since landing, disaggregated by admission class. Source: IMDB.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-ca-8">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — gap chart</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure CA-8</p>
+              <h4>Immigrant–Native Earnings Gap by Education Level</h4>
+              <p>Ratio of immigrant to Canadian-born median earnings at each credential level. Source: Census 2021, IMDB.</p>
+            </div>
+          </div>
+          <div class="fig-card span-2" id="fig-ca-9">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — industry concentration</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure CA-9</p>
+              <h4>Sectoral Employment Concentration, Immigrants vs. Canadian-Born</h4>
+              <p>Location quotients by 2-digit NAICS code. Source: LFS 2024.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis tone-gold">
+          <h3>Integration Analysis</h3>
+          <p>Canada's economic-class focus produces an immigrant population with high formal educational credentials — over 60% of principal applicants in the economic class hold a bachelor's degree or higher. Despite this, a well-documented earnings gap persists at landing: recent IMDB analysis shows that economic-class immigrants earn approximately 60–70% of comparable Canadian-born workers in their first year, with convergence to roughly 85–95% by year 10.</p>
+          <p>Credential recognition remains the primary friction point. Immigrants with credentials from non-Anglophone, non-Francophone countries face steeper recognition barriers, leading to higher rates of overqualification (working in occupations below one's credential level). The National Occupational Classification (NOC) matching process has been identified as a key area for policy reform.</p>
+          <div class="callout ca">
+            <strong>Key finding placeholder:</strong> Specific earnings convergence rate and overqualification estimate with confidence bounds and cohort specification.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Provincial Data -->
+  <div id="tab-ca-prov" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Provincial and Territorial Distribution</h2>
+        <p>Settlement patterns by province, PNP allocation trends, and retention rates of provincial nominees.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card span-2" id="fig-ca-10">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — provincial stacked area</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure CA-10</p>
+              <h4>Permanent Resident Admissions by Province, 2000–2025</h4>
+              <p>Share of annual admissions by intended destination province. PNP growth visible post-2005. Source: IRCC.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-ca-11">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — bar chart</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure CA-11</p>
+              <h4>PNP Nominations by Province, 2024</h4>
+              <p>Total nominations and per-capita rates by province/territory. Source: IRCC.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-ca-12">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — retention line chart</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure CA-12</p>
+              <h4>Provincial Nominee Retention Rates, 1–5 Years</h4>
+              <p>Share of PNP nominees still residing in nominating province at 1, 3, and 5 years post-landing. Source: IMDB.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis tone-purple">
+          <h3>Provincial Analysis</h3>
+          <p>Ontario continues to receive the largest share of permanent residents (approximately 45%), followed by British Columbia (15%) and Quebec (14%, with its own selection system). However, the PNP has significantly altered settlement dynamics: Manitoba, Saskatchewan, Alberta, and the Atlantic provinces have all seen substantial increases in immigrant inflows since PNP allocations were expanded in the mid-2000s.</p>
+          <p>Retention is a key metric of PNP effectiveness. IMDB data show that retention rates vary significantly by province, with Manitoba and Saskatchewan achieving higher 5-year retention rates (approximately 75–80%) compared to some Atlantic provinces where interprovincial outmigration to Ontario or BC remains common.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Demographics -->
+  <div id="tab-ca-demo" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Demographic Profile</h2>
+        <p>Age structure, educational attainment, language proficiency, and citizenship acquisition among Canada's immigrant population.</p>
+
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <div class="fig-card" id="fig-ca-13">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — population pyramid</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure CA-13</p>
+              <h4>Age-Sex Distribution, Immigrant vs. Canadian-Born</h4>
+              <p>Working-age concentration visible in immigrant population. Source: Census 2021.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-ca-14">
+            <div class="fig-area">
+              <div class="grid-bg"></div>
+              <span class="fig-label">Chart placeholder — stacked bar</span>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Figure CA-14</p>
+              <h4>Official Language Knowledge at Landing</h4>
+              <p>English only, French only, both, neither — by immigration class. Source: IRCC.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis tone-rose">
+          <h3>Demographic Analysis</h3>
+          <p>Canada's immigrant population is distinguished by high educational attainment and strong working-age concentration. The median age of recent immigrants (approximately 31) is significantly lower than the median age of the Canadian-born population (approximately 41), positioning immigration as a key demographic lever against population aging and below-replacement fertility (TFR of approximately 1.3).</p>
+          <p>Official language proficiency at landing has improved over time, driven by Express Entry's language scoring. However, significant heterogeneity exists by immigration class: economic principal applicants score substantially higher on CLB/NCLC benchmarks than family-class or humanitarian admissions, creating differentiated settlement and integration service demands.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Cross-link -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <a href="us.html" class="cross-link-bar">
+        <div>
+          <h4>🇺🇸 United States Country Report</h4>
+          <p>Compare with U.S. family-sponsored and employment-based structures, visa backlogs, and fiscal impact estimates.</p>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-org">
+          <h4>Charles River Economics Labs</h4>
+          <p>In partnership with Harvard University and the Bank of Canada</p>
+          <div class="footer-logos">
+            <a href="https://www.charlesrivereconomicslabs.org/" target="_blank" rel="noopener noreferrer"><img src="crel-logo.png" class="footer-logo crel-logo" alt="CREL" /></a>
+            <a href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer"><img src="harvard-logo.svg" class="footer-logo harvard-logo" alt="Harvard" /></a>
+            <a href="https://www.bankofcanada.ca/" target="_blank" rel="noopener noreferrer"><img src="boc-logo.png" class="footer-logo boc-logo" alt="Bank of Canada" /></a>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <strong>Charles River Economics Labs</strong><br />
+          <a href="mailto:charlesrivereconomicslabs@gmail.com">charlesrivereconomicslabs@gmail.com</a><br />
+          <a href="mailto:akilansankaran@college.harvard.edu">akilansankaran@college.harvard.edu</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Charles River Economics Labs. All rights reserved.</span>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="comparison.html">Comparison</a></li>
+          <li><a href="us.html">United States</a></li>
+          <li><a href="canada.html">Canada</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search overlay -->
+  <div class="search-overlay" id="search-overlay" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal">
+      <div class="search-header">
+        <span class="search-icon">&#x2315;</span>
+        <input type="text" class="search-input" placeholder="Search figures, charts, analysis..." />
+        <button class="search-close" onclick="closeSearch()">&times;</button>
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+  <script src="search.js"></script>
+</body>
+</html>
