@@ -77,6 +77,8 @@
       <button class="indicator-tab" data-tab="us-econ"><span class="tab-icon">▧</span> Economic Impact</button>
       <button class="indicator-tab" data-tab="us-geo"><span class="tab-icon">▩</span> Geography</button>
       <button class="indicator-tab" data-tab="us-policy"><span class="tab-icon">▨</span> Policy Timeline</button>
+      <button class="indicator-tab" data-tab="us-demo"><span class="tab-icon">◉</span> ACS Demographics</button>
+      <button class="indicator-tab" data-tab="us-social"><span class="tab-icon">◎</span> Social &amp; Integration</button>
     </div>
   </div>
 
@@ -91,12 +93,12 @@
             <div class="stat-src">FY 2024</div>
           </div>
           <div class="stat-cell">
-            <div class="stat-val">45.3M</div>
+            <div class="stat-val">50.2M</div>
             <div class="stat-lbl">Foreign-Born Residents</div>
-            <div class="stat-src">ACS 2024 Est.</div>
+            <div class="stat-src">ACS 2024</div>
           </div>
           <div class="stat-cell">
-            <div class="stat-val">14.3%</div>
+            <div class="stat-val">14.8%</div>
             <div class="stat-lbl">Population Share</div>
             <div class="stat-src">Foreign-Born</div>
           </div>
@@ -115,8 +117,8 @@
         <div class="content-2col">
           <div>
             <h2>Executive Summary</h2>
-            <p>The United States admits approximately 1.18 million legal permanent residents annually under a system that allocates the majority of visas through family-sponsored channels. Immigration has been a defining economic and demographic force: the foreign-born population has grown from 9.6 million in 1970 to over 45 million today, reshaping labor markets, fiscal accounts, and regional demographics across all 50 states.</p>
-            <p>This country report presents disaggregated data on admission flows, visa category distribution, source-country composition, labor market outcomes, geographic settlement patterns, and the measurable effects of major legislative changes. Navigate through the indicator tabs above to explore each dimension.</p>
+            <p>The United States admits approximately 1.18 million legal permanent residents annually under a system that allocates the majority of visas through family-sponsored channels. Immigration has been a defining economic and demographic force: the foreign-born population has grown from 9.6 million in 1970 to over 50 million today, reshaping labor markets, fiscal accounts, and regional demographics across all 50 states.</p>
+            <p>This country report presents disaggregated data on admission flows, visa category distribution, source-country composition, labor market outcomes, geographic settlement patterns, and the measurable effects of major legislative changes. The ACS Demographics and Social &amp; Integration tabs present data from the 2024 American Community Survey covering origin, naturalization, language, education, housing, and integration outcomes by entry cohort.</p>
 
             <h3 style="margin-top:1.5rem;">Key Takeaways</h3>
             <div class="accordion-item open">
@@ -148,7 +150,7 @@
               </button>
               <div class="accordion-body">
                 <div class="accordion-body-inner">
-                  While comprising 14.3% of the population, immigrants account for approximately 25% of U.S. patent filings and have founded or co-founded over 40% of Fortune 500 companies. Immigrant entrepreneurship rates exceed those of native-born Americans across most demographic cohorts.
+                  While comprising 14.8% of the population, immigrants account for approximately 25% of U.S. patent filings and have founded or co-founded over 40% of Fortune 500 companies. Immigrant entrepreneurship rates exceed those of native-born Americans across most demographic cohorts.
                 </div>
               </div>
             </div>
@@ -170,7 +172,7 @@
               <h4>U.S. Data Sources</h4>
               <ul>
                 <li>DHS Yearbook of Immigration Statistics</li>
-                <li>American Community Survey (ACS)</li>
+                <li>ACS 1-Year Estimates 2024 (S0502, DP02, S0702)</li>
                 <li>Current Population Survey (CPS)</li>
                 <li>USCIS Administrative Data</li>
                 <li>National Academies of Sciences (2017)</li>
@@ -179,7 +181,7 @@
             </div>
             <div class="sidebar-card">
               <h4>Coverage</h4>
-              <p>Fiscal years 1970–2025 for admission flow data. Calendar year estimates for ACS and CPS microdata. Policy impact analysis covers major legislation from 1965 to present.</p>
+              <p>Fiscal years 1970–2025 for admission flow data. Calendar year estimates for ACS and CPS microdata. ACS 2024 cohort analysis covers three entry periods: 2010+, 2000–09, and Pre-2000. Policy impact analysis covers major legislation from 1965 to present.</p>
             </div>
           </aside>
         </div>
@@ -288,50 +290,77 @@
     <section class="section">
       <div class="container">
         <h2>Economic Contributions</h2>
-        <p>Labor force participation, earnings analysis, fiscal impact estimates, and innovation metrics for the U.S. immigrant population.</p>
+        <p>Labor force participation, earnings trajectories, poverty outcomes, and occupation distribution by entry cohort. Source: ACS 1-Year Estimates 2024.</p>
 
         <div class="fig-grid" style="margin-top:1.5rem;">
           <div class="fig-card" id="fig-us-6">
-            <div class="fig-area">
-              <div class="grid-bg"></div>
-              <span class="fig-label">Chart placeholder — grouped bar</span>
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g17"></canvas>
+              </div>
             </div>
             <div class="fig-caption">
-              <p class="fig-num">Figure US-6</p>
-              <h4>Employment and Earnings by Nativity</h4>
-              <p>LFPR, employment rate, and median weekly earnings. Source: CPS 2024.</p>
+              <p class="fig-num">G17 · ACS 2024</p>
+              <h4>Labor Force Participation vs. Unemployment Rate by Cohort</h4>
+              <p>LFP highest among 2000–09 arrivals (77.2%); unemployment falls with tenure. Recent arrivals show 6.0% unemployment vs. 3.3% for Pre-2000. Source: ACS 2024.</p>
             </div>
           </div>
           <div class="fig-card" id="fig-us-7">
-            <div class="fig-area">
-              <div class="grid-bg"></div>
-              <span class="fig-label">Chart placeholder — donut + bar</span>
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g20"></canvas>
+              </div>
             </div>
             <div class="fig-caption">
-              <p class="fig-num">Figure US-7</p>
-              <h4>Immigrant Share by Industry Sector</h4>
-              <p>Sectors where immigrant workers exceed 20% of the workforce. Source: ACS 2024.</p>
+              <p class="fig-num">G20 · ACS 2024</p>
+              <h4>Occupation Distribution by Entry Cohort</h4>
+              <p>Management/professional share is similar across cohorts (~38%). Pre-2000 arrivals show highest production/transport concentration (16%). Source: ACS 2024.</p>
             </div>
           </div>
           <div class="fig-card span-2" id="fig-us-8">
-            <div class="fig-area">
-              <div class="grid-bg"></div>
-              <span class="fig-label">Chart placeholder — horizontal bar</span>
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:245px;">
+                <canvas id="chart-g21"></canvas>
+              </div>
             </div>
             <div class="fig-caption">
-              <p class="fig-num">Figure US-8</p>
-              <h4>Net Fiscal Impact by Education Level and Time Since Arrival</h4>
-              <p>Taxes paid minus benefits received, by educational attainment and decade of admission. Source: NAS 2017, CBO.</p>
+              <p class="fig-num">G21 · ACS 2024</p>
+              <h4>Median Earnings by Gender and Entry Cohort (Full-Time, Year-Round Workers)</h4>
+              <p>Earnings rise with tenure for both genders. Gender gap persists across cohorts: $6,637 (2010+) to $9,504 (Pre-2000), suggesting structural rather than assimilation-related drivers. Source: ACS 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-8b">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g23"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G23 · ACS 2024</p>
+              <h4>Median Household Income by Entry Cohort</h4>
+              <p>Median household income rises sharply from $76.6K (2010+) to $85.5K (2000–09), then plateaus at $85.3K (Pre-2000), suggesting income gains concentrate in the first decade of settlement. Source: ACS 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-8c">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g25"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G25 · ACS 2024</p>
+              <h4>Poverty Rate by Entry Cohort (Below 100% FPL)</h4>
+              <p>Poverty declines significantly with tenure: 18.1% for 2010+ arrivals vs. 10.8% for Pre-2000. Female-headed households face the highest rates across all cohorts. Source: ACS 2024.</p>
             </div>
           </div>
         </div>
 
         <div class="analysis tone-gold">
           <h3>Economic Analysis</h3>
-          <p>Immigrants constitute approximately 17% of the U.S. civilian labor force. They are concentrated in sectors with persistent labor shortages: agriculture (estimated 73% of crop workers are foreign-born), construction (30%), accommodation and food services (28%), and healthcare support (25%). At the high-skill end, immigrants represent 29% of STEM workers and account for roughly 25% of U.S. patent filings.</p>
-          <p>The aggregate fiscal impact of immigration is net-positive at the federal level and varies at the state/local level depending on immigrant educational attainment, household size, and utilization of means-tested programs. The National Academies (2017) found that immigration generates a net positive fiscal contribution of $279,000 in present-value terms over a 75-year horizon when second-generation effects are included.</p>
+          <p>Immigrants constitute approximately 17% of the U.S. civilian labor force. ACS 2024 data show labor force participation peaks among the 2000–09 cohort (77.2%), reflecting the prime working-age concentration of this group. Recent arrivals (2010+) show higher unemployment (6.0%) and lower household incomes ($76.6K median), consistent with standard labor market assimilation patterns.</p>
+          <p>Poverty rates decline substantially with tenure: the 2010+ cohort shows 18.1% poverty vs. 10.8% for Pre-2000 arrivals. Family structure is a strong moderating factor — female-headed households (no spouse) face rates of 33.6% (2010+) compared to 11.2% for married-couple families in the same cohort. Occupation distributions are broadly similar across cohorts, with management/professional roles representing approximately 38–39% of employed immigrants regardless of tenure.</p>
           <div class="callout">
-            <strong>Key finding placeholder:</strong> Updated fiscal estimate or entrepreneurship metric with source citation.
+            <strong>ACS 2024 Headline:</strong> The gender earnings gap among full-time workers ranges from $6,637 (2010+ cohort) to $9,504 (Pre-2000), suggesting the gap widens rather than narrows over immigrant tenure — a pattern warranting further decomposition by occupation and industry.
           </div>
         </div>
       </div>
@@ -342,26 +371,52 @@
   <div id="tab-us-geo" class="tab-panel">
     <section class="section">
       <div class="container">
-        <h2>Geographic Distribution</h2>
-        <p>State-level settlement patterns, new-destination growth trends, and urban-rural distribution of the immigrant population.</p>
+        <h2>Geographic Distribution &amp; Mobility</h2>
+        <p>Settlement patterns by destination region and residential mobility of the U.S. population. Source: ACS S0702 2024.</p>
 
         <div class="fig-grid" style="margin-top:1.5rem;">
           <div class="fig-card span-2" id="fig-us-9">
-            <div class="fig-area">
-              <div class="grid-bg"></div>
-              <span class="fig-label">Chart placeholder — state-level choropleth</span>
+            <div class="fig-area" style="display:block;padding:0.5rem 1.5rem;">
+              <div style="position:relative;height:245px;">
+                <canvas id="chart-g47"></canvas>
+              </div>
             </div>
             <div class="fig-caption">
-              <p class="fig-num">Figure US-9</p>
-              <h4>Foreign-Born Population Share by State, 2024</h4>
-              <p>Percentage of state population that is foreign-born. Source: ACS 2024.</p>
+              <p class="fig-num">G47 · ACS S0702 2024</p>
+              <h4>International Movers by Destination Region</h4>
+              <p>The South received 1.117 million international movers — more than the other three regions combined — reflecting continued growth in Sun Belt immigration destinations. Source: ACS S0702 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-9b">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g46"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G46 · ACS S0702 2024</p>
+              <h4>Residential Mobility: U.S. Population 1+ Year</h4>
+              <p>88.2% of the U.S. population remained at the same address in the prior year. International movers accounted for 0.8% of all residents — approximately 2.7 million people. Source: ACS S0702 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-9c">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g49"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G49 · ACS S0702 2024</p>
+              <h4>International Movers as Share of Regional Population</h4>
+              <p>The South (0.85%) and Northeast (0.79%) absorb the highest share of international movers relative to their regional populations. Source: ACS S0702 2024.</p>
             </div>
           </div>
         </div>
 
         <div class="analysis tone-purple">
           <h3>Settlement Analysis</h3>
-          <p>Six traditional gateway states — California, New York, Texas, Florida, New Jersey, and Illinois — account for roughly 65% of the foreign-born population. However, the fastest growth rates since 2000 have occurred in new-destination states: North Carolina, Georgia, Tennessee, Nevada, and Arkansas have seen their immigrant populations more than double. This geographic dispersion creates varied demands on education, healthcare, and language-access services at the local level.</p>
+          <p>ACS 2024 mobility data show that the South received the largest absolute volume of international movers (1.117 million), more than the Northeast (451K), West (609K), and Midwest (375K) combined. This concentration reflects the continued growth of Sun Belt metropolitan areas as primary immigrant destinations — a structural shift from the traditional Northeast/West gateway dominance of earlier decades.</p>
+          <p>At the regional level, the South (0.85%) and Northeast (0.79%) show the highest international mover share as a proportion of regional population, compared to 0.77% in the West and 0.54% in the Midwest. The Midwest's lower rate is consistent with its slower overall population growth and fewer traditional immigrant gateway cities. Six traditional gateway states — California, New York, Texas, Florida, New Jersey, and Illinois — still account for roughly 65% of the cumulative foreign-born stock.</p>
         </div>
       </div>
     </section>
@@ -392,6 +447,272 @@
           <h3>Legislative Impact Assessment</h3>
           <p>Each major piece of immigration legislation has produced measurable, and often lagged, effects on admission volumes, category distributions, and enforcement metrics. The Immigration and Nationality Act of 1965 triggered a structural shift in source-country composition that unfolded over two decades. IRCA produced a temporary spike in admissions through legalization but did not achieve its stated goal of reducing unauthorized immigration. IIRIRA introduced expedited removal and 3/10-year bars that continue to shape unauthorized-to-authorized transition dynamics.</p>
           <p>This section will present regression-discontinuity and event-study estimates quantifying the causal impact of major legislative changes on admission flows, processing times, and enforcement outcomes.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: ACS Demographics -->
+  <div id="tab-us-demo" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>ACS 2024 Demographics</h2>
+        <p>Origin composition, nativity, age structure, and ancestry of the U.S. foreign-born population by entry cohort. Source: ACS 1-Year Estimates 2024.</p>
+
+        <!-- Origin -->
+        <h3 style="margin-top:1.5rem;margin-bottom:0.75rem;">Origin &amp; Composition</h3>
+        <div class="fig-grid">
+          <div class="fig-card" id="fig-us-d1">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g03"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G03 · ACS 2024</p>
+              <h4>Total Foreign-Born Origin Composition</h4>
+              <p>Latin America accounts for over half (51.4%) of the foreign-born population, followed by Asia (30.8%) and Europe (9.7%). Africa's share (5.9%) has grown rapidly in recent cohorts. Source: ACS 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-d2">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g01"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G01 · ACS 2024</p>
+              <h4>Origin Region by Entry Cohort</h4>
+              <p>Africa's share rises from 3.5% (Pre-2000) to 8.3% (2010+), while Europe's share declines from 12.4% to 7.5% across cohorts — reflecting shifting global migration patterns. Source: ACS 2024.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nativity & Age -->
+        <h3 style="margin-top:1.75rem;margin-bottom:0.75rem;">Nativity &amp; Age Structure</h3>
+        <div class="fig-grid">
+          <div class="fig-card" id="fig-us-d3">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g42"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G42 · ACS DP02 2024</p>
+              <h4>Nativity Status of U.S. Population</h4>
+              <p>14.8% of the U.S. population (approximately 50.2 million people) is foreign-born — the highest absolute level in the nation's history. Source: ACS DP02 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-d4">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g43"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G43 · ACS DP02 2024</p>
+              <h4>Foreign-Born Population by Period of Entry</h4>
+              <p>37.7% of the foreign-born population entered in 2010 or later, and 41.2% arrived before 2000 — reflecting both recent inflows and the long-established immigrant stock. Source: ACS DP02 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-d5">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g37"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G37 · ACS 2024</p>
+              <h4>Age Distribution by Entry Cohort</h4>
+              <p>2010+ arrivals are concentrated in the 18–44 bracket (61.1%); Pre-2000 arrivals have aged into the 45–64 (49.2%) and 65+ (35.6%) brackets, reflecting natural cohort aging. Source: ACS 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-d6">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g38"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G38 · ACS 2024</p>
+              <h4>Median Age of Foreign-Born by Entry Cohort</h4>
+              <p>Median age rises from 33.6 years (2010+) to 59.6 years (Pre-2000). The 26-year gap between cohorts is driven by natural aging of long-settled immigrants rather than differences in entry age. Source: ACS 2024.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ancestry -->
+        <h3 style="margin-top:1.75rem;margin-bottom:0.75rem;">Ancestry</h3>
+        <div class="fig-grid">
+          <div class="fig-card span-2" id="fig-us-d7">
+            <div class="fig-area" style="display:block;padding:0.5rem 1.5rem;">
+              <div style="position:relative;height:245px;">
+                <canvas id="chart-g44"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G44 · ACS DP02 2024</p>
+              <h4>Top Ancestry Groups, All U.S. Residents</h4>
+              <p>German (11.8%), Irish (9.5%), and English (9.1%) remain the three largest self-reported ancestry groups, reflecting the deep European heritage of the native-born population alongside growing sub-Saharan African ancestry. Source: ACS DP02 2024.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis">
+          <h3>Demographics Analysis</h3>
+          <p>The ACS 2024 documents a foreign-born population of approximately 50.2 million — 14.8% of the total U.S. population. Latin America accounts for 51.4% of this population (weighted heavily by Mexico), with Asia (30.8%) now approaching half of Latin America's share. Critically, Africa's share has nearly tripled across entry cohorts from 3.5% (Pre-2000) to 8.3% (2010+), signaling a fundamental diversification of immigrant origins.</p>
+          <p>Age structure follows a predictable cohort-aging pattern: the 2010+ group has a median age of 33.6 years and is concentrated in the working-age 18–44 bracket, while the Pre-2000 cohort has a median age of 59.6 years and is increasingly concentrated in the 45–64 and 65+ brackets. This demographic gradient has important implications for labor supply, naturalization propensity, and government transfer program utilization.</p>
+          <div class="callout">
+            <strong>ACS 2024 Headline:</strong> Sub-Saharan African ancestry now appears in the top 10 ancestry groups at 1.4%, and Africa's origin share among recent arrivals (8.3%) is more than twice its share among Pre-2000 immigrants (3.5%).
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TAB: Social & Integration -->
+  <div id="tab-us-social" class="tab-panel">
+    <section class="section">
+      <div class="container">
+        <h2>Social Profile &amp; Integration</h2>
+        <p>Naturalization, language proficiency, educational attainment, homeownership, household structure, and integration metrics by entry cohort. Source: ACS 1-Year Estimates 2024.</p>
+
+        <!-- Naturalization -->
+        <h3 style="margin-top:1.5rem;margin-bottom:0.75rem;">Naturalization</h3>
+        <div class="fig-grid">
+          <div class="fig-card" id="fig-us-s1">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g05"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G05 · ACS 2024</p>
+              <h4>Naturalization Rate by Entry Cohort</h4>
+              <p>Only 22.6% of 2010+ arrivals are naturalized, compared to 75.9% of Pre-2000 immigrants — a strong assimilation gradient that reflects both eligibility requirements and the time required for integration. Source: ACS 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-s2">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g06"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G06 · ACS 2024</p>
+              <h4>Citizenship Status by Entry Cohort</h4>
+              <p>77.4% of the 2010+ cohort are non-citizens vs. only 24.1% of Pre-2000 arrivals. The inversion from non-citizen majority to citizen majority occurs between the 2010+ and 2000–09 cohorts. Source: ACS 2024.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Language -->
+        <h3 style="margin-top:1.75rem;margin-bottom:0.75rem;">Language Proficiency</h3>
+        <div class="fig-grid">
+          <div class="fig-card" id="fig-us-s3">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g10"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G10 · ACS DP02 2024</p>
+              <h4>Language Spoken at Home, All U.S. Residents</h4>
+              <p>77.0% of U.S. residents speak only English at home. Spanish (13.9%) is the dominant non-English language, followed by Other Indo-European (4.1%) and Asian/Pacific Islander languages (3.7%). Source: ACS DP02 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-s4">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g09"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G09 · ACS DP02 2024</p>
+              <h4>Limited English Proficiency Rate by Language Group</h4>
+              <p>Asian/PI speakers have the highest LEP rate (43.1%), slightly above Spanish speakers (41.1%). Indo-European speakers show a lower rate (31.5%), reflecting the European-origin English-cognate advantage. Source: ACS DP02 2024.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education & Housing -->
+        <h3 style="margin-top:1.75rem;margin-bottom:0.75rem;">Education &amp; Housing</h3>
+        <div class="fig-grid">
+          <div class="fig-card span-2" id="fig-us-s5">
+            <div class="fig-area" style="display:block;padding:0.5rem 1.5rem;">
+              <div style="position:relative;height:245px;">
+                <canvas id="chart-g13"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G13 · ACS 2024</p>
+              <h4>Educational Attainment by Entry Cohort (Population 25+)</h4>
+              <p>2010+ arrivals have the highest share with less than high school (19.4%) but also the highest BA+ attainment (44.6%), indicating a bimodal distribution. Pre-2000 immigrants show the most concentrated less-than-HS group (27.0%). Source: ACS 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-s6">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g15"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G15 · ACS 2024</p>
+              <h4>Bachelor's Degree or Higher by Entry Cohort</h4>
+              <p>Recent arrivals have the highest educational credentials (44.6% BA+) — consistent with increased selectivity in employment-based admissions and graduate student-to-worker transitions. Source: ACS 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-s7">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g28"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G28 · ACS 2024</p>
+              <h4>Homeownership Rate by Entry Cohort</h4>
+              <p>Homeownership rises from 32.0% (2010+) to 69.3% (Pre-2000), tracking closely with naturalization rates and income trajectories. The 37-point gap between cohorts signals sustained economic integration over time. Source: ACS 2024.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Household & Integration -->
+        <h3 style="margin-top:1.75rem;margin-bottom:0.75rem;">Household Structure &amp; Integration Profile</h3>
+        <div class="fig-grid">
+          <div class="fig-card" id="fig-us-s8">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g32"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G32 · ACS 2024</p>
+              <h4>Marital Status Distribution by Entry Cohort</h4>
+              <p>Married rates rise with tenure (53.8% → 63.9%). "Never married" declines sharply from 37.0% (2010+) to 12.7% (Pre-2000), partially reflecting age distribution differences between cohorts. Source: ACS 2024.</p>
+            </div>
+          </div>
+          <div class="fig-card" id="fig-us-s9">
+            <div class="fig-area" style="display:block;padding:0.5rem 1rem;">
+              <div style="position:relative;height:185px;">
+                <canvas id="chart-g53"></canvas>
+              </div>
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">G53 · ACS 2024</p>
+              <h4>Integration Profile Radar by Entry Cohort</h4>
+              <p>Pre-2000 immigrants score highest on structural integration (naturalization, homeownership, marriage, low poverty) while 2010+ arrivals lead on educational credentials (BA+ 44.6%). Source: ACS 2024.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis tone-teal">
+          <h3>Integration Analysis</h3>
+          <p>ACS 2024 data paint a consistent picture of immigrant integration as a decades-long trajectory. Naturalization (22.6% → 75.9%), homeownership (32.0% → 69.3%), marriage rates (53.8% → 63.9%), and income all improve substantially across entry cohorts. Poverty rates halve from 18.1% (2010+) to 10.8% (Pre-2000).</p>
+          <p>Language remains the most persistent integration barrier. LEP rates are high for recent arrivals and do not fully close even in long-settled cohorts: 43.0% of Pre-2000 non-English speakers still speak English less than "very well." Asian/Pacific Islander language speakers face the highest LEP rates (43.1%), followed by Spanish speakers (41.1%).</p>
+          <p>Education shows a bimodal pattern among recent arrivals: the 2010+ cohort has both the highest BA+ share (44.6%) and the highest less-than-high-school share (19.4%), reflecting the dual nature of the U.S. immigration system which selects simultaneously for high-skill workers and for family-sponsored and humanitarian arrivals.</p>
+          <div class="callout">
+            <strong>ACS 2024 Headline:</strong> Naturalization rate more than triples from 2010+ (22.6%) to Pre-2000 cohorts (75.9%); homeownership follows the same trajectory (+37 points), confirming that structural integration — civic and economic — is a long-horizon process requiring at least 10–15 years to materialize fully.
+          </div>
         </div>
       </div>
     </section>
@@ -453,6 +774,586 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script src="search.js"></script>
+  <script>
+  /* ── ACS 2024 Chart Initialization ─────────────────────── */
+  (function () {
+
+    /* Shared palette */
+    const C1  = '#60a5fa'; /* 2010+ — blue       */
+    const C2  = '#34d399'; /* 2000–09 — emerald   */
+    const C3  = '#fb923c'; /* Pre-2000 — amber    */
+    const C1A = 'rgba(96,165,250,0.75)';
+    const C2A = 'rgba(52,211,153,0.75)';
+    const C3A = 'rgba(251,146,60,0.75)';
+
+    const COHORTS = ['2010+', '2000–09', 'Pre-2000'];
+
+    /* Global Chart.js defaults for dark theme */
+    Chart.defaults.color          = '#94a3b8';
+    Chart.defaults.borderColor    = 'rgba(255,255,255,0.07)';
+    Chart.defaults.font.size      = 11;
+    Chart.defaults.plugins.legend.labels.boxWidth = 12;
+    Chart.defaults.plugins.legend.labels.padding  = 10;
+
+    const baseOpts = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom' },
+        tooltip: { mode: 'index', intersect: false }
+      },
+      scales: {
+        x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } },
+        y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } }
+      }
+    };
+
+    function mk(id, cfg) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      new Chart(el, cfg);
+    }
+
+    /* ── G17 · LFP vs Unemployment by Cohort ─────────── */
+    mk('chart-g17', {
+      type: 'bar',
+      data: {
+        labels: COHORTS,
+        datasets: [
+          { label: 'Labor Force Participation (%)', data: [72.8, 77.2, 59.0], backgroundColor: [C1A, C2A, C3A], borderColor: [C1, C2, C3], borderWidth: 1.5 },
+          { label: 'Unemployment Rate (%)',          data: [6.0,  4.0,  3.3],  backgroundColor: 'rgba(192,64,64,0.65)', borderColor: '#c04040', borderWidth: 1.5 }
+        ]
+      },
+      options: { ...baseOpts, plugins: { ...baseOpts.plugins, tooltip: { mode: 'index', intersect: false } } }
+    });
+
+    /* ── G20 · Occupation Distribution by Cohort ─────── */
+    mk('chart-g20', {
+      type: 'bar',
+      data: {
+        labels: ['Mgmt/Business/Science/Arts', 'Service', 'Sales/Office', 'Constr/Nat Resources', 'Prod/Transport'],
+        datasets: [
+          { label: '2010+',    data: [38, 21, 13, 12, 15], backgroundColor: C1A, borderColor: C1, borderWidth: 1.5 },
+          { label: '2000–09',  data: [37, 22, 14, 13, 14], backgroundColor: C2A, borderColor: C2, borderWidth: 1.5 },
+          { label: 'Pre-2000', data: [39, 20, 15, 11, 16], backgroundColor: C3A, borderColor: C3, borderWidth: 1.5 }
+        ]
+      },
+      options: {
+        ...baseOpts,
+        scales: {
+          x: { ...baseOpts.scales.x, ticks: { color: '#94a3b8', maxRotation: 35, font: { size: 10 } } },
+          y: { ...baseOpts.scales.y, title: { display: true, text: '% of Employed', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G21 · Median Earnings by Gender & Cohort ────── */
+    mk('chart-g21', {
+      type: 'bar',
+      data: {
+        labels: COHORTS,
+        datasets: [
+          { label: 'Male Median Earnings ($K)',   data: [53, 60, 65], backgroundColor: C1A, borderColor: C1, borderWidth: 1.5 },
+          { label: 'Female Median Earnings ($K)', data: [47, 51, 56], backgroundColor: C3A, borderColor: C3, borderWidth: 1.5 }
+        ]
+      },
+      options: {
+        ...baseOpts,
+        scales: {
+          x: baseOpts.scales.x,
+          y: { ...baseOpts.scales.y, min: 40, title: { display: true, text: '$ Thousands', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G23 · Median Household Income by Cohort ─────── */
+    mk('chart-g23', {
+      type: 'bar',
+      data: {
+        labels: COHORTS,
+        datasets: [{
+          label: 'Median HH Income ($K)',
+          data: [76.6, 85.5, 85.3],
+          backgroundColor: [C1A, C2A, C3A],
+          borderColor: [C1, C2, C3],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        ...baseOpts,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: baseOpts.scales.x,
+          y: { ...baseOpts.scales.y, min: 65, title: { display: true, text: '$ Thousands', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G25 · Poverty Rate by Cohort ───────────────── */
+    mk('chart-g25', {
+      type: 'bar',
+      data: {
+        labels: COHORTS,
+        datasets: [{
+          label: '% Below 100% FPL',
+          data: [18.1, 12.6, 10.8],
+          backgroundColor: [C1A, C2A, C3A],
+          borderColor: [C1, C2, C3],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        ...baseOpts,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: baseOpts.scales.x,
+          y: { ...baseOpts.scales.y, min: 0, title: { display: true, text: '% Below Poverty Line', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G47 · International Movers by Region ────────── */
+    mk('chart-g47', {
+      type: 'bar',
+      data: {
+        labels: ['Northeast', 'Midwest', 'South', 'West'],
+        datasets: [{
+          label: 'International Movers (Thousands)',
+          data: [451, 375, 1117, 609],
+          backgroundColor: [C1A, C2A, 'rgba(192,64,64,0.65)', C3A],
+          borderColor: [C1, C2, '#c04040', C3],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        ...baseOpts,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: baseOpts.scales.x,
+          y: { ...baseOpts.scales.y, title: { display: true, text: 'Movers (Thousands)', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G46 · Residential Mobility ──────────────────── */
+    mk('chart-g46', {
+      type: 'doughnut',
+      data: {
+        labels: ['Same Residence', 'Moved (Same Region)', 'Moved (Diff. Region)', 'Moved from Abroad'],
+        datasets: [{
+          data: [88.2, 9.9, 1.1, 0.8],
+          backgroundColor: ['rgba(100,116,139,0.75)', C1A, C2A, C3A],
+          borderColor: ['#475569', C1, C2, C3],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 11, padding: 8, font: { size: 10 } } },
+          tooltip: { callbacks: { label: ctx => ' ' + ctx.label + ': ' + ctx.raw + '%' } }
+        }
+      }
+    });
+
+    /* ── G49 · Intl Movers as % of Regional Population ─ */
+    mk('chart-g49', {
+      type: 'bar',
+      data: {
+        labels: ['Northeast', 'Midwest', 'South', 'West'],
+        datasets: [{
+          label: 'International Movers as % of Regional Pop.',
+          data: [0.79, 0.54, 0.85, 0.77],
+          backgroundColor: [C1A, C2A, 'rgba(192,64,64,0.65)', C3A],
+          borderColor: [C1, C2, '#c04040', C3],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        ...baseOpts,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: baseOpts.scales.x,
+          y: { ...baseOpts.scales.y, title: { display: true, text: '% of Regional Population', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G03 · Origin Composition Doughnut ───────────── */
+    mk('chart-g03', {
+      type: 'doughnut',
+      data: {
+        labels: ['Latin America', 'Asia', 'Europe', 'Africa', 'N. America', 'Oceania'],
+        datasets: [{
+          data: [51.4, 30.8, 9.7, 5.9, 1.7, 0.6],
+          backgroundColor: [
+            'rgba(96,165,250,0.8)', 'rgba(52,211,153,0.8)', 'rgba(167,139,250,0.8)',
+            'rgba(251,146,60,0.8)', 'rgba(244,114,182,0.8)', 'rgba(34,211,238,0.8)'
+          ],
+          borderColor: ['#60a5fa','#34d399','#a78bfa','#fb923c','#f472b6','#22d3ee'],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 11, padding: 8, font: { size: 10 } } },
+          tooltip: { callbacks: { label: ctx => ' ' + ctx.label + ': ' + ctx.raw + '%' } }
+        }
+      }
+    });
+
+    /* ── G01 · Origin by Cohort (Stacked Bar) ────────── */
+    mk('chart-g01', {
+      type: 'bar',
+      data: {
+        labels: COHORTS,
+        datasets: [
+          { label: 'Latin America', data: [49.6, 53.7, 51.8], backgroundColor: 'rgba(96,165,250,0.8)',  borderColor: '#60a5fa', borderWidth: 1 },
+          { label: 'Asia',          data: [32.5, 29.7, 29.8], backgroundColor: 'rgba(52,211,153,0.8)',  borderColor: '#34d399', borderWidth: 1 },
+          { label: 'Europe',        data: [7.5,  8.2,  12.4], backgroundColor: 'rgba(167,139,250,0.8)', borderColor: '#a78bfa', borderWidth: 1 },
+          { label: 'Africa',        data: [8.3,  6.6,  3.5],  backgroundColor: 'rgba(251,146,60,0.8)',  borderColor: '#fb923c', borderWidth: 1 },
+          { label: 'N. America',    data: [1.5,  1.2,  2.0],  backgroundColor: 'rgba(244,114,182,0.8)', borderColor: '#f472b6', borderWidth: 1 },
+          { label: 'Oceania',       data: [0.6,  0.6,  0.5],  backgroundColor: 'rgba(34,211,238,0.8)',  borderColor: '#22d3ee', borderWidth: 1 }
+        ]
+      },
+      options: {
+        ...baseOpts,
+        scales: {
+          x: { ...baseOpts.scales.x, stacked: true },
+          y: { ...baseOpts.scales.y, stacked: true, title: { display: true, text: '% of Foreign-Born', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G42 · Nativity Status ───────────────────────── */
+    mk('chart-g42', {
+      type: 'doughnut',
+      data: {
+        labels: ['Native-Born', 'Foreign-Born'],
+        datasets: [{
+          data: [85.2, 14.8],
+          backgroundColor: ['rgba(100,116,139,0.7)', C1A],
+          borderColor: ['#475569', C1],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 11, padding: 8 } },
+          tooltip: { callbacks: { label: ctx => ' ' + ctx.label + ': ' + ctx.raw + '%' } }
+        }
+      }
+    });
+
+    /* ── G43 · Foreign-Born by Period of Entry ───────── */
+    mk('chart-g43', {
+      type: 'doughnut',
+      data: {
+        labels: ['Entered 2010+', 'Entered 2000–09', 'Entered Pre-2000'],
+        datasets: [{
+          data: [37.7, 21.1, 41.2],
+          backgroundColor: [C1A, C2A, C3A],
+          borderColor: [C1, C2, C3],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 11, padding: 8 } },
+          tooltip: { callbacks: { label: ctx => ' ' + ctx.label + ': ' + ctx.raw + '%' } }
+        }
+      }
+    });
+
+    /* ── G37 · Age Distribution by Cohort ───────────── */
+    mk('chart-g37', {
+      type: 'bar',
+      data: {
+        labels: ['Under 18', '18–44', '45–64', '65+'],
+        datasets: [
+          { label: '2010+',    data: [16.2, 61.1, 17.8, 4.6],  backgroundColor: C1A, borderColor: C1, borderWidth: 1.5 },
+          { label: '2000–09',  data: [1.9,  52.5, 38.8, 7.7],  backgroundColor: C2A, borderColor: C2, borderWidth: 1.5 },
+          { label: 'Pre-2000', data: [0.0,  15.2, 49.2, 35.6], backgroundColor: C3A, borderColor: C3, borderWidth: 1.5 }
+        ]
+      },
+      options: {
+        ...baseOpts,
+        scales: {
+          x: baseOpts.scales.x,
+          y: { ...baseOpts.scales.y, title: { display: true, text: '% of Foreign-Born', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G38 · Median Age by Cohort ─────────────────── */
+    mk('chart-g38', {
+      type: 'bar',
+      data: {
+        labels: COHORTS,
+        datasets: [{
+          label: 'Median Age (Years)',
+          data: [33.6, 44.0, 59.6],
+          backgroundColor: [C1A, C2A, C3A],
+          borderColor: [C1, C2, C3],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        ...baseOpts,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: baseOpts.scales.x,
+          y: { ...baseOpts.scales.y, min: 25, title: { display: true, text: 'Years', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G44 · Top Ancestry Groups (Horizontal Bar) ──── */
+    mk('chart-g44', {
+      type: 'bar',
+      data: {
+        labels: ['German','Irish','English','Italian','Polish','Scottish','French','Sub-Saharan African','Norwegian','Dutch'],
+        datasets: [{
+          label: '% of Total U.S. Population',
+          data: [11.8, 9.5, 9.1, 4.8, 2.5, 1.9, 1.8, 1.4, 1.1, 0.9],
+          backgroundColor: [
+            C1A, C2A, C3A,
+            'rgba(167,139,250,0.75)', 'rgba(244,114,182,0.75)',
+            'rgba(34,211,238,0.75)',  C1A, C2A, C3A,
+            'rgba(167,139,250,0.75)'
+          ],
+          borderColor: ['#60a5fa','#34d399','#fb923c','#a78bfa','#f472b6','#22d3ee','#60a5fa','#34d399','#fb923c','#a78bfa'],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ' ' + ctx.raw + '% of population' } } },
+        scales: {
+          x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' }, title: { display: true, text: '% of Total U.S. Population', color: '#94a3b8', font: { size: 10 } } },
+          y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G05 · Naturalization Rate by Cohort ────────── */
+    mk('chart-g05', {
+      type: 'bar',
+      data: {
+        labels: COHORTS,
+        datasets: [{
+          label: '% Naturalized',
+          data: [22.6, 55.3, 75.9],
+          backgroundColor: [C1A, C2A, C3A],
+          borderColor: [C1, C2, C3],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        ...baseOpts,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: baseOpts.scales.x,
+          y: { ...baseOpts.scales.y, min: 0, max: 100, title: { display: true, text: '% Naturalized', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G06 · Citizenship Status (Stacked Bar) ──────── */
+    mk('chart-g06', {
+      type: 'bar',
+      data: {
+        labels: COHORTS,
+        datasets: [
+          { label: 'Naturalized Citizen', data: [22.6, 55.3, 75.9], backgroundColor: C2A, borderColor: C2, borderWidth: 1 },
+          { label: 'Not a Citizen',       data: [77.4, 44.7, 24.1], backgroundColor: 'rgba(100,116,139,0.6)', borderColor: '#475569', borderWidth: 1 }
+        ]
+      },
+      options: {
+        ...baseOpts,
+        scales: {
+          x: { ...baseOpts.scales.x, stacked: true },
+          y: { ...baseOpts.scales.y, stacked: true, max: 100, title: { display: true, text: '% of Foreign-Born', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G10 · Language at Home (Doughnut) ────────────── */
+    mk('chart-g10', {
+      type: 'doughnut',
+      data: {
+        labels: ['English Only', 'Spanish', 'Other Indo-Eur.', 'Asian/PI', 'Other'],
+        datasets: [{
+          data: [77.0, 13.9, 4.1, 3.7, 1.3],
+          backgroundColor: [
+            'rgba(100,116,139,0.7)', C1A, C2A, C3A, 'rgba(167,139,250,0.75)'
+          ],
+          borderColor: ['#475569', C1, C2, C3, '#a78bfa'],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 11, padding: 8, font: { size: 10 } } },
+          tooltip: { callbacks: { label: ctx => ' ' + ctx.label + ': ' + ctx.raw + '%' } }
+        }
+      }
+    });
+
+    /* ── G09 · LEP Rate by Language Group ─────────────── */
+    mk('chart-g09', {
+      type: 'bar',
+      data: {
+        labels: ['Spanish', 'Other Indo-Eur.', 'Asian/PI', 'Other'],
+        datasets: [{
+          label: '% LEP within language group',
+          data: [41.1, 31.5, 43.1, 29.4],
+          backgroundColor: [C1A, C2A, C3A, 'rgba(167,139,250,0.75)'],
+          borderColor: [C1, C2, C3, '#a78bfa'],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        ...baseOpts,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: baseOpts.scales.x,
+          y: { ...baseOpts.scales.y, title: { display: true, text: '% LEP within group', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G13 · Educational Attainment by Cohort ──────── */
+    mk('chart-g13', {
+      type: 'bar',
+      data: {
+        labels: ['< High School', 'HS Graduate', 'Some College/AA', "Bachelor's", 'Grad/Prof'],
+        datasets: [
+          { label: '2010+',    data: [19.4, 21.2, 14.8, 24.0, 20.6], backgroundColor: C1A, borderColor: C1, borderWidth: 1.5 },
+          { label: '2000–09',  data: [25.7, 23.3, 17.1, 18.5, 15.4], backgroundColor: C2A, borderColor: C2, borderWidth: 1.5 },
+          { label: 'Pre-2000', data: [27.0, 21.9, 20.1, 17.2, 13.8], backgroundColor: C3A, borderColor: C3, borderWidth: 1.5 }
+        ]
+      },
+      options: {
+        ...baseOpts,
+        scales: {
+          x: { ...baseOpts.scales.x, ticks: { color: '#94a3b8', maxRotation: 30, font: { size: 10 } } },
+          y: { ...baseOpts.scales.y, title: { display: true, text: '% of Foreign-Born 25+', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G15 · BA+ by Cohort ─────────────────────────── */
+    mk('chart-g15', {
+      type: 'bar',
+      data: {
+        labels: COHORTS,
+        datasets: [{
+          label: '% with Bachelor\'s or Higher',
+          data: [44.6, 33.9, 31.0],
+          backgroundColor: [C1A, C2A, C3A],
+          borderColor: [C1, C2, C3],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        ...baseOpts,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: baseOpts.scales.x,
+          y: { ...baseOpts.scales.y, title: { display: true, text: '% BA or Higher', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G28 · Homeownership by Cohort ───────────────── */
+    mk('chart-g28', {
+      type: 'bar',
+      data: {
+        labels: COHORTS,
+        datasets: [{
+          label: '% Owner-Occupied',
+          data: [32.0, 54.2, 69.3],
+          backgroundColor: [C1A, C2A, C3A],
+          borderColor: [C1, C2, C3],
+          borderWidth: 1.5
+        }]
+      },
+      options: {
+        ...baseOpts,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: baseOpts.scales.x,
+          y: { ...baseOpts.scales.y, title: { display: true, text: '% Owner-Occupied', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G32 · Marital Status (Stacked Bar) ──────────── */
+    mk('chart-g32', {
+      type: 'bar',
+      data: {
+        labels: COHORTS,
+        datasets: [
+          { label: 'Married',          data: [53.8, 60.2, 63.9], backgroundColor: C2A, borderColor: C2, borderWidth: 1 },
+          { label: 'Never Married',    data: [37.0, 26.7, 12.7], backgroundColor: C1A, borderColor: C1, borderWidth: 1 },
+          { label: 'Divorced/Sep.',    data: [7.0,  10.5, 14.6], backgroundColor: C3A, borderColor: C3, borderWidth: 1 },
+          { label: 'Widowed',          data: [2.2,  2.6,  8.8],  backgroundColor: 'rgba(167,139,250,0.7)', borderColor: '#a78bfa', borderWidth: 1 }
+        ]
+      },
+      options: {
+        ...baseOpts,
+        scales: {
+          x: { ...baseOpts.scales.x, stacked: true },
+          y: { ...baseOpts.scales.y, stacked: true, max: 100, title: { display: true, text: '% of Foreign-Born', color: '#94a3b8', font: { size: 10 } } }
+        }
+      }
+    });
+
+    /* ── G53 · Integration Profile Radar ─────────────── */
+    mk('chart-g53', {
+      type: 'radar',
+      data: {
+        labels: ['Naturalization', 'BA+ Attainment', 'Owner-Occupancy', 'Not in Poverty', 'LFP Rate', 'Married'],
+        datasets: [
+          { label: '2010+',    data: [22.6, 44.6, 32.0, 81.9, 72.8, 53.8], borderColor: C1, backgroundColor: 'rgba(96,165,250,0.15)', pointBackgroundColor: C1, pointRadius: 3, borderWidth: 1.5 },
+          { label: '2000–09',  data: [55.3, 33.9, 54.2, 87.4, 77.2, 60.2], borderColor: C2, backgroundColor: 'rgba(52,211,153,0.15)',  pointBackgroundColor: C2, pointRadius: 3, borderWidth: 1.5 },
+          { label: 'Pre-2000', data: [75.9, 31.0, 69.3, 89.2, 59.0, 63.9], borderColor: C3, backgroundColor: 'rgba(251,146,60,0.15)',  pointBackgroundColor: C3, pointRadius: 3, borderWidth: 1.5 }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 11, padding: 10 } }
+        },
+        scales: {
+          r: {
+            min: 0,
+            max: 100,
+            grid:      { color: 'rgba(255,255,255,0.08)' },
+            angleLines: { color: 'rgba(255,255,255,0.08)' },
+            pointLabels: { color: '#94a3b8', font: { size: 10 } },
+            ticks: { display: false, stepSize: 25 }
+          }
+        }
+      }
+    });
+
+  })();
+  </script>
 </body>
 </html>

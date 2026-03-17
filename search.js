@@ -32,6 +32,38 @@ const SEARCH_INDEX = [
   { title:"Foreign-Born Population Share by State, 2024", category:"Geography", page:"us.html", tab:"us-geo", figId:"fig-us-9", keywords:"choropleth state settlement California New York" },
   { title:"Legislative Milestones and Admission Volume, 1965–2025", category:"Policy Timeline", page:"us.html", tab:"us-policy", figId:"fig-us-10", keywords:"Hart-Celler IRCA DACA legislation" },
 
+  // ── ACS 2024 — Economic Impact ────────────────────────
+  { title:"Labor Force Participation vs. Unemployment Rate by Cohort", category:"Economic Impact", page:"us.html", tab:"us-econ", figId:"fig-us-6", keywords:"LFP labor force participation unemployment ACS 2024 cohort G17" },
+  { title:"Occupation Distribution by Entry Cohort", category:"Economic Impact", page:"us.html", tab:"us-econ", figId:"fig-us-7", keywords:"occupation management service production ACS 2024 G20" },
+  { title:"Median Earnings by Gender and Entry Cohort", category:"Economic Impact", page:"us.html", tab:"us-econ", figId:"fig-us-8", keywords:"earnings income gender male female wage gap ACS 2024 G21" },
+  { title:"Median Household Income by Entry Cohort", category:"Economic Impact", page:"us.html", tab:"us-econ", figId:"fig-us-8b", keywords:"household income median ACS 2024 G23" },
+  { title:"Poverty Rate by Entry Cohort", category:"Economic Impact", page:"us.html", tab:"us-econ", figId:"fig-us-8c", keywords:"poverty FPL below poverty line ACS 2024 G25" },
+
+  // ── ACS 2024 — Geography ──────────────────────────────
+  { title:"International Movers by Destination Region", category:"Geography", page:"us.html", tab:"us-geo", figId:"fig-us-9", keywords:"movers South Northeast Midwest West region ACS S0702 G47" },
+  { title:"Residential Mobility: U.S. Population 1+ Year", category:"Geography", page:"us.html", tab:"us-geo", figId:"fig-us-9b", keywords:"mobility same residence moved abroad ACS S0702 G46" },
+  { title:"International Movers as Share of Regional Population", category:"Geography", page:"us.html", tab:"us-geo", figId:"fig-us-9c", keywords:"movers share regional population percent ACS S0702 G49" },
+
+  // ── ACS 2024 — Demographics tab ──────────────────────
+  { title:"Total Foreign-Born Origin Composition", category:"ACS Demographics", page:"us.html", tab:"us-demo", figId:"fig-us-d1", keywords:"origin Latin America Asia Europe Africa doughnut G03" },
+  { title:"Origin Region by Entry Cohort", category:"ACS Demographics", page:"us.html", tab:"us-demo", figId:"fig-us-d2", keywords:"origin cohort stacked bar Africa Europe Asia Latin America G01" },
+  { title:"Nativity Status of U.S. Population", category:"ACS Demographics", page:"us.html", tab:"us-demo", figId:"fig-us-d3", keywords:"nativity native born foreign born 14.8 G42" },
+  { title:"Foreign-Born Population by Period of Entry", category:"ACS Demographics", page:"us.html", tab:"us-demo", figId:"fig-us-d4", keywords:"period entry 2010 2000 pre-2000 doughnut G43" },
+  { title:"Age Distribution by Entry Cohort", category:"ACS Demographics", page:"us.html", tab:"us-demo", figId:"fig-us-d5", keywords:"age distribution under 18 working age elderly G37" },
+  { title:"Median Age of Foreign-Born by Entry Cohort", category:"ACS Demographics", page:"us.html", tab:"us-demo", figId:"fig-us-d6", keywords:"median age 33 44 59 cohort G38" },
+  { title:"Top Ancestry Groups, All U.S. Residents", category:"ACS Demographics", page:"us.html", tab:"us-demo", figId:"fig-us-d7", keywords:"ancestry German Irish English Italian Polish G44" },
+
+  // ── ACS 2024 — Social & Integration tab ──────────────
+  { title:"Naturalization Rate by Entry Cohort", category:"Social & Integration", page:"us.html", tab:"us-social", figId:"fig-us-s1", keywords:"naturalization citizenship rate 22 55 75 G05" },
+  { title:"Citizenship Status by Entry Cohort", category:"Social & Integration", page:"us.html", tab:"us-social", figId:"fig-us-s2", keywords:"citizenship naturalized citizen not citizen stacked G06" },
+  { title:"Language Spoken at Home, All U.S. Residents", category:"Social & Integration", page:"us.html", tab:"us-social", figId:"fig-us-s3", keywords:"language English Spanish home residents G10" },
+  { title:"Limited English Proficiency Rate by Language Group", category:"Social & Integration", page:"us.html", tab:"us-social", figId:"fig-us-s4", keywords:"LEP limited English proficiency Spanish Asian G09" },
+  { title:"Educational Attainment by Entry Cohort", category:"Social & Integration", page:"us.html", tab:"us-social", figId:"fig-us-s5", keywords:"education high school bachelor graduate attainment G13" },
+  { title:"Bachelor's Degree or Higher by Entry Cohort", category:"Social & Integration", page:"us.html", tab:"us-social", figId:"fig-us-s6", keywords:"bachelor degree higher education 44 33 31 G15" },
+  { title:"Homeownership Rate by Entry Cohort", category:"Social & Integration", page:"us.html", tab:"us-social", figId:"fig-us-s7", keywords:"homeownership owner occupied 32 54 69 G28" },
+  { title:"Marital Status Distribution by Entry Cohort", category:"Social & Integration", page:"us.html", tab:"us-social", figId:"fig-us-s8", keywords:"marital status married divorced never married G32" },
+  { title:"Integration Profile Radar by Entry Cohort", category:"Social & Integration", page:"us.html", tab:"us-social", figId:"fig-us-s9", keywords:"integration radar naturalization education homeownership poverty LFP G53" },
+
   // ── Canada page (canada.html) ─────────────────────────────
   { title:"Levels Plan Targets vs. Actual Admissions, 1990–2025", category:"Admission Flows", page:"canada.html", tab:"ca-flows", figId:"fig-ca-1", keywords:"time series target actual IRCC" },
   { title:"Admissions by Source Region, 1980–2025", category:"Admission Flows", page:"canada.html", tab:"ca-flows", figId:"fig-ca-2", keywords:"area chart Europe Asia Africa origin" },
