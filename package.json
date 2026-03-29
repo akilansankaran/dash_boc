@@ -1,0 +1,7 @@
+{
+  "name": "website-crel",
+  "private": true,
+  "scripts": {
+    "serve": "npx serve . -l 8090"
+  }
+}

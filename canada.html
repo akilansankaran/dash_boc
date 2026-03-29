@@ -302,51 +302,136 @@
     <section class="section">
       <div class="container">
         <h2>Economic Integration and Earnings</h2>
-        <p>Labor market outcomes, earnings trajectories, credential recognition, and sectoral employment patterns for immigrant workers in Canada.</p>
+        <p>Labor market outcomes, earnings trajectories, income distributions, poverty measures, and regression-based analyses of economic integration for Canada's population (Census 2021).</p>
 
         <div class="fig-grid" style="margin-top:1.5rem;">
-          <div class="fig-card" id="fig-ca-7">
-            <div class="fig-area">
-              <div class="grid-bg"></div>
-              <span class="fig-label">Chart placeholder — cohort earnings chart</span>
+
+          <div class="fig-card span-2" id="fig-ca-7">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-7.png" alt="Graph 7 — Labour Force Indicators by Province/Territory" class="fig-img" />
             </div>
             <div class="fig-caption">
-              <p class="fig-num">Figure CA-7</p>
-              <h4>Earnings Trajectories by Landing Cohort, 1–10 Years</h4>
-              <p>Median T4 earnings by years since landing, disaggregated by admission class. Source: IMDB.</p>
+              <p class="fig-num">Graph 7 &mdash; Census 2021</p>
+              <h4>Labour Force Indicators by Province/Territory</h4>
+              <p>Participation rate, employment rate, and unemployment rate with 95% Wilson confidence intervals by province/territory.</p>
+              <p class="fig-desc">Provincial labour force participation and employment rates exhibit substantial geographic heterogeneity, with Yukon and Northwest Territories recording the highest participation rates (≈71%), attributable to resource-extraction economies and below-average dependency ratios, while Nunavut shows an anomalously elevated unemployment rate (≈17%) despite moderate participation, consistent with structural skill-mismatch in remote labour markets.</p>
             </div>
           </div>
-          <div class="fig-card" id="fig-ca-8">
-            <div class="fig-area">
-              <div class="grid-bg"></div>
-              <span class="fig-label">Chart placeholder — gap chart</span>
+
+          <div class="fig-card span-2" id="fig-ca-8">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-8.png" alt="Graph 8 — Income Distribution Pre-tax vs After-tax" class="fig-img" />
             </div>
             <div class="fig-caption">
-              <p class="fig-num">Figure CA-8</p>
-              <h4>Immigrant–Native Earnings Gap by Education Level</h4>
-              <p>Ratio of immigrant to Canadian-born median earnings at each credential level. Source: Census 2021, IMDB.</p>
+              <p class="fig-num">Graph 8 &mdash; Census 2021</p>
+              <h4>Income Distribution: Pre-tax vs. After-tax (Canada, 2021)</h4>
+              <p>Share of population in each $10,000 income bin for pre-tax and after-tax total income.</p>
+              <p class="fig-desc">The after-tax distribution is right-shifted relative to pre-tax income at the $20,000–$40,000 range — reflecting the net effect of refundable credits and transfers — while the pre-tax distribution exhibits a heavier right tail above $100,000, consistent with Canada's progressive marginal rate schedule compressing the post-tax distribution at the upper deciles.</p>
             </div>
           </div>
+
           <div class="fig-card span-2" id="fig-ca-9">
-            <div class="fig-area">
-              <div class="grid-bg"></div>
-              <span class="fig-label">Chart placeholder — industry concentration</span>
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-9.png" alt="Graph 9 — Poverty Prevalence LIM-AT and LICO-AT" class="fig-img" />
             </div>
             <div class="fig-caption">
-              <p class="fig-num">Figure CA-9</p>
-              <h4>Sectoral Employment Concentration, Immigrants vs. Canadian-Born</h4>
-              <p>Location quotients by 2-digit NAICS code. Source: LFS 2024.</p>
+              <p class="fig-num">Graph 9 &mdash; Census 2021</p>
+              <h4>Poverty Prevalence by Province: LIM-AT and LICO-AT</h4>
+              <p>LIM-AT (relative threshold, 50% of median after-tax income) and LICO-AT (spending-based absolute threshold) with 95% Wilson confidence intervals. LICO-AT not produced for territories.</p>
+              <p class="fig-desc">LIM-AT systematically exceeds LICO-AT in all provinces, with the gap ranging from ≈10 percentage points in Newfoundland and Nova Scotia to ≈6 points in Ontario and BC; the two measures diverge directionally for territories — Nunavut's LIM-AT rate (≈15%) is among the highest nationally despite LICO-AT's inapplicability — underscoring the sensitivity of poverty measurement to the choice of relative versus absolute threshold.</p>
             </div>
           </div>
+
+          <div class="fig-card span-2" id="fig-ca-15">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-15.png" alt="Graph 15 — Median Income vs Low-Income Prevalence" class="fig-img" />
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Graph 15 &mdash; Census 2021</p>
+              <h4>Median Income vs. Low-Income Prevalence (2021)</h4>
+              <p>Cross-provincial scatter of median total income against LIM-AT and LICO-AT prevalence with Pearson correlations.</p>
+              <p class="fig-desc">The LIM-AT measure exhibits a strong negative correlation with median income (r = −0.89), mechanically consistent with its construction as a relative threshold, while LICO-AT shows a near-zero positive correlation (r = 0.24), reflecting its absolute spending-based threshold that does not co-move with median income; the divergence is most pronounced in the territories, where high median incomes produce low LIM-AT rates despite elevated cost-of-living-adjusted hardship.</p>
+            </div>
+          </div>
+
+          <div class="fig-card" id="fig-ca-13-ols">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-13.png" alt="Graph 13 — OLS Median Income vs Immigrant Region Shares" class="fig-img" />
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Graph 13 &mdash; Census 2021</p>
+              <h4>OLS: Median Income vs. Immigrant Region Shares (R² = 0.544)</h4>
+              <p>Predicted vs. actual median income from an OLS model using immigrant region-of-birth shares as regressors; error bars are 95% prediction intervals.</p>
+              <p class="fig-desc">The OLS model achieves an R² of 0.544, indicating that immigrant origin-region composition accounts for roughly half the cross-provincial variation in median income; notable residuals — Ontario and BC underpredicted, NT and YT well-fitted — suggest immigrant region composition is a proxy for broader economic and resource-endowment factors rather than an independent causal channel.</p>
+            </div>
+          </div>
+
+          <div class="fig-card" id="fig-ca-14-logit">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-14.png" alt="Graph 14 — Logistic Model High Poverty" class="fig-img" />
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Graph 14 &mdash; Census 2021</p>
+              <h4>Logistic Model: High Poverty (HL χ² = 4.297, p = 0.231)</h4>
+              <p>Predicted probability of above-median LIM-AT poverty against actual LIM-AT rate; Hosmer-Lemeshow goodness-of-fit test.</p>
+              <p class="fig-desc">The logistic model achieves adequate calibration (HL χ² = 4.297, p = 0.231), with BC and the territories assigned low predicted poverty probability despite varying LIM-AT rates, while Ontario's high predicted probability (0.81) at a 10% LIM-AT rate reflects covariate patterns — urban density and housing cost burden — that the model captures beyond the poverty rate itself.</p>
+            </div>
+          </div>
+
+          <div class="fig-card" id="fig-ca-18">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-18.png" alt="Graph 18 — Visible Minority % × Median Income" class="fig-img" />
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Graph 18 &mdash; Census 2021</p>
+              <h4>Visible Minority Population (%) × Median Income</h4>
+              <p>Cross-provincial scatter with Pearson r = 0.11.</p>
+              <p class="fig-desc">The near-zero positive correlation (r = 0.11) between visible minority share and median income is inconsistent with a simple wage-dilution hypothesis and reflects omitted confounders — principally industrial composition; NT and YT drive the positive trend through resource wage premiums, while high-minority provinces (ON, BC) cluster near the sample income median.</p>
+            </div>
+          </div>
+
+          <div class="fig-card" id="fig-ca-19">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-19.png" alt="Graph 19 — Postsecondary Attainment × Median Income" class="fig-img" />
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Graph 19 &mdash; Census 2021</p>
+              <h4>Postsecondary Attainment (%) × Median Income</h4>
+              <p>Cross-provincial scatter with OLS trendline; R² = 0.048.</p>
+              <p class="fig-desc">Human capital proxied by postsecondary attainment explains negligible cross-provincial income variation (R² = 0.048) in this 13-observation cross-section; NT and YT — above-median incomes despite moderate attainment rates — indicate that resource extraction wage premiums dominate any education-productivity channel at the provincial level of aggregation.</p>
+            </div>
+          </div>
+
+          <div class="fig-card span-2" id="fig-ca-11">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-11.png" alt="Graph 11 — Immigrant Region × Education Heatmap" class="fig-img" />
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Graph 11 &mdash; Census 2021</p>
+              <h4>Immigrant Region × Education Heatmap (Cramér's V = 0.000)</h4>
+              <p>Pearson correlation between provincial immigrant region shares and education attainment shares across provinces.</p>
+              <p class="fig-desc">African-origin immigrants exhibit a strong positive correlation (r = 0.72) with no-certificate attainment and a strong negative correlation (r = −0.70) with high school completion across provinces, while European immigrants show a pronounced positive association (r = 0.60) with postsecondary attainment; Cramér's V near zero reflects cancellation of opposing region-level effects and does not imply absence of substantively large heterogeneities.</p>
+            </div>
+          </div>
+
+          <div class="fig-card span-2" id="fig-ca-12">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-12.png" alt="Graph 12 — Employment Rate by Asia-share Tercile" class="fig-img" />
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Graph 12 &mdash; Census 2021</p>
+              <h4>Employment Rate by Asia-share Tercile (ANOVA F = 5.945, p = 0.0199)</h4>
+              <p>Box-and-jitter plots of provincial employment rates stratified by tercile of Asian immigrant population share.</p>
+              <p class="fig-desc">Provinces in the middle tercile of Asian immigrant share exhibit significantly higher median employment rates (≈62%) than low-tercile provinces (≈52%), with one-way ANOVA rejecting equal means at the 5% level (F = 5.945, p = 0.020); the non-monotonic pattern — mid-tercile exceeding high-tercile — is more consistent with omitted province-level economic conditions correlated with Asian immigrant settlement than with a direct compositional effect.</p>
+            </div>
+          </div>
+
         </div>
 
         <div class="analysis tone-gold">
           <h3>Integration Analysis</h3>
-          <p>Canada's economic-class focus produces an immigrant population with high formal educational credentials — over 60% of principal applicants in the economic class hold a bachelor's degree or higher. Despite this, a well-documented earnings gap persists at landing: recent IMDB analysis shows that economic-class immigrants earn approximately 60–70% of comparable Canadian-born workers in their first year, with convergence to roughly 85–95% by year 10.</p>
-          <p>Credential recognition remains the primary friction point. Immigrants with credentials from non-Anglophone, non-Francophone countries face steeper recognition barriers, leading to higher rates of overqualification (working in occupations below one's credential level). The National Occupational Classification (NOC) matching process has been identified as a key area for policy reform.</p>
-          <div class="callout ca">
-            <strong>Key finding placeholder:</strong> Specific earnings convergence rate and overqualification estimate with confidence bounds and cohort specification.
-          </div>
+          <p>Canada's economic-class focus produces an immigrant population with high formal educational credentials — over 60% of principal applicants in the economic class hold a bachelor's degree or higher. Despite this, a well-documented earnings gap persists at landing: IMDB data show that economic-class immigrants earn approximately 60–70% of comparable Canadian-born workers in their first year, with convergence to roughly 85–95% by year 10.</p>
+          <p>Cross-provincial regression analysis (Graph 13, R² = 0.544) confirms that immigrant origin-region composition is a significant correlate of provincial median income, though the relationship is substantially mediated by industrial structure. The divergence between LIM-AT and LICO-AT poverty metrics (Graphs 9, 15) highlights the need for methodological care when comparing poverty outcomes across geographies with different cost structures.</p>
         </div>
       </div>
     </section>
@@ -357,13 +442,14 @@
     <section class="section">
       <div class="container">
         <h2>Provincial and Territorial Distribution</h2>
-        <p>Settlement patterns by province, PNP allocation trends, and retention rates of provincial nominees.</p>
+        <p>Settlement patterns, citizenship composition, labour force outcomes, and immigrant-education linkages by province and territory (Census 2021).</p>
 
         <div class="fig-grid" style="margin-top:1.5rem;">
+
           <div class="fig-card span-2" id="fig-ca-10">
             <div class="fig-area">
               <div class="grid-bg"></div>
-              <span class="fig-label">Chart placeholder — provincial stacked area</span>
+              <span class="fig-label">Chart placeholder — Permanent Resident Admissions by Province, 2000–2025 (IRCC data pending)</span>
             </div>
             <div class="fig-caption">
               <p class="fig-num">Figure CA-10</p>
@@ -371,34 +457,37 @@
               <p>Share of annual admissions by intended destination province. PNP growth visible post-2005. Source: IRCC.</p>
             </div>
           </div>
-          <div class="fig-card" id="fig-ca-11">
-            <div class="fig-area">
-              <div class="grid-bg"></div>
-              <span class="fig-label">Chart placeholder — bar chart</span>
+
+          <div class="fig-card span-2" id="fig-ca-1-prov">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-1.png" alt="Graph 1 — Citizenship Status by Province/Territory" class="fig-img" />
             </div>
             <div class="fig-caption">
-              <p class="fig-num">Figure CA-11</p>
-              <h4>PNP Nominations by Province, 2024</h4>
-              <p>Total nominations and per-capita rates by province/territory. Source: IRCC.</p>
+              <p class="fig-num">Graph 1 &mdash; Census 2021</p>
+              <h4>Citizenship Status by Province/Territory (2021 Census)</h4>
+              <p>Canadian citizen and non-citizen shares with 95% Wilson confidence intervals by province/territory.</p>
+              <p class="fig-desc">Canadian citizenship saturation exceeds 88% across all provinces, with Nunavut (98.9%) and Newfoundland (97.8%) exhibiting the highest rates, while British Columbia (88.7%) and Ontario (90.0%) — the two primary immigrant-destination provinces — show the lowest rates, consistent with their higher shares of recent arrivals still within the three-year naturalization waiting period.</p>
             </div>
           </div>
-          <div class="fig-card" id="fig-ca-12">
-            <div class="fig-area">
-              <div class="grid-bg"></div>
-              <span class="fig-label">Chart placeholder — retention line chart</span>
+
+          <div class="fig-card span-2" id="fig-ca-17">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-17.png" alt="Graph 17 — One-Person Households vs Median Income" class="fig-img" />
             </div>
             <div class="fig-caption">
-              <p class="fig-num">Figure CA-12</p>
-              <h4>Provincial Nominee Retention Rates, 1–5 Years</h4>
-              <p>Share of PNP nominees still residing in nominating province at 1, 3, and 5 years post-landing. Source: IMDB.</p>
+              <p class="fig-num">Graph 17 &mdash; Census 2021</p>
+              <h4>One-Person Households vs. Median Total Income (2021)</h4>
+              <p>Cross-provincial scatter with OLS trendline; Pearson r = 0.11.</p>
+              <p class="fig-desc">The near-zero correlation (r = 0.11) between one-person household prevalence and provincial median income indicates that single-person household share is not systematically associated with lower provincial incomes; the null result reflects compositional heterogeneity — high-income urban centres (ON, BC) and resource territories (YT, NT) simultaneously exhibit elevated one-person household rates for structurally distinct demographic and economic reasons.</p>
             </div>
           </div>
+
         </div>
 
         <div class="analysis tone-purple">
           <h3>Provincial Analysis</h3>
           <p>Ontario continues to receive the largest share of permanent residents (approximately 45%), followed by British Columbia (15%) and Quebec (14%, with its own selection system). However, the PNP has significantly altered settlement dynamics: Manitoba, Saskatchewan, Alberta, and the Atlantic provinces have all seen substantial increases in immigrant inflows since PNP allocations were expanded in the mid-2000s.</p>
-          <p>Retention is a key metric of PNP effectiveness. IMDB data show that retention rates vary significantly by province, with Manitoba and Saskatchewan achieving higher 5-year retention rates (approximately 75–80%) compared to some Atlantic provinces where interprovincial outmigration to Ontario or BC remains common.</p>
+          <p>The citizenship saturation data (Graph 1) confirms that low-immigration provinces maintain citizenship rates above 94%, providing a baseline against which to assess the integration speed of recent cohorts. Cross-provincial income analysis (Graph 17) suggests that household structure indicators carry limited predictive power for provincial income levels absent controls for industrial composition and resource endowment.</p>
         </div>
       </div>
     </section>
@@ -409,13 +498,98 @@
     <section class="section">
       <div class="container">
         <h2>Demographic Profile</h2>
-        <p>Age structure, educational attainment, language proficiency, and citizenship acquisition among Canada's immigrant population.</p>
+        <p>Immigrant origin, sex composition, income gaps, household structure, educational attainment, and occupational segregation (Census 2021).</p>
 
         <div class="fig-grid" style="margin-top:1.5rem;">
+
+          <div class="fig-card span-2" id="fig-ca-2">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-2.png" alt="Graph 2 — Immigrant Population by World Region of Birth" class="fig-img" />
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Graph 2 &mdash; Census 2021</p>
+              <h4>Immigrant Population by World Region of Birth (Canada, 2021)</h4>
+              <p>Share and count of Canada's foreign-born population by world region of birth; error bars are 95% Wilson confidence intervals.</p>
+              <p class="fig-desc">Asia accounts for 51.5% (4.31M) of Canada's foreign-born population — a share exceeding the combined Europe and Americas contributions — reflecting the cumulative effect of post-1990 policy shifts toward skills-based selection and the geographic origins of the principal applicant pool under Express Entry and the Provincial Nominee Program.</p>
+            </div>
+          </div>
+
+          <div class="fig-card span-2" id="fig-ca-3">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-3.png" alt="Graph 3 — Sex Composition and Median Income Gap" class="fig-img" />
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Graph 3 &mdash; Census 2021</p>
+              <h4>Sex Composition and Median Income Gap (Canada, 2021)</h4>
+              <p>Population counts by sex (left panel) and median income by income concept for men and women with 95% confidence intervals (right panel).</p>
+              <p class="fig-desc">Across all five income concepts, women's median income is 17–31% below men's; the market income gap (31.1%) substantially exceeds the after-tax gap (17.6%), confirming that progressive taxation and transfer programs attenuate, but do not eliminate, the structural gender income differential — a pattern consistent with OECD-wide evidence on redistributive fiscal incidence.</p>
+            </div>
+          </div>
+
+          <div class="fig-card span-2" id="fig-ca-4">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-4.png" alt="Graph 4 — Visible Minority Categories" class="fig-img" />
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Graph 4 &mdash; Census 2021</p>
+              <h4>Visible Minority Categories (Canada, 2021)</h4>
+              <p>Share and count of population by visible minority category; error bars are 95% Wilson confidence intervals.</p>
+              <p class="fig-desc">South Asians (7.1%), Chinese (4.7%), and Black Canadians (4.3%) constitute the three largest visible minority groups and together comprise 16.1% of the total population; these shares reflect both historical immigration flows and differential fertility rates, with South Asian communities experiencing the fastest absolute growth in the 2016–2021 intercensal period.</p>
+            </div>
+          </div>
+
+          <div class="fig-card span-2" id="fig-ca-5">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-5.png" alt="Graph 5 — Household Type Distribution" class="fig-img" />
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Graph 5 &mdash; Census 2021</p>
+              <h4>Household Type Distribution (Canada, 2021)</h4>
+              <p>Share and count of private households by census household type; error bars are 95% Wilson confidence intervals.</p>
+              <p class="fig-desc">One-census-family households without additional persons dominate at 59.6%, while one-person households at 29.3% represent the second most common type, reflecting urbanization-driven household atomization; the 2.9% multigenerational household share is disproportionately concentrated among immigrant communities from South and East Asia, where co-residence norms and settlement economics jointly suppress household dissolution rates.</p>
+            </div>
+          </div>
+
+          <div class="fig-card span-2" id="fig-ca-6">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-6.png" alt="Graph 6 — Educational Attainment by Sex" class="fig-img" />
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Graph 6 &mdash; Census 2021</p>
+              <h4>Educational Attainment (15+), by Sex (Canada, 2021)</h4>
+              <p>Population aged 15+ by highest certificate, diploma, or degree and sex; error bars are 95% Wilson confidence intervals.</p>
+              <p class="fig-desc">Women have surpassed men at the bachelor's degree (3.3M vs. 2.5M) and college/CEGEP certificate levels, consistent with the global reversal of the gender education gap among post-1980 birth cohorts; however, men retain a 2.2× advantage in apprenticeship/trades credentials, reflecting persistent gender segregation in vocational training pathways with implications for occupational wage gaps in trade-intensive sectors.</p>
+            </div>
+          </div>
+
+          <div class="fig-card span-2" id="fig-ca-10-occ">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-10.png" alt="Graph 10 — Occupation Groups by Sex" class="fig-img" />
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Graph 10 &mdash; Census 2021</p>
+              <h4>Broad Occupation Groups (NOC), by Sex (Canada, 2021)</h4>
+              <p>Diverging bar chart of worker counts by NOC major group and sex (men left, women right).</p>
+              <p class="fig-desc">Trades, transport, and equipment operator occupations are male-dominated (men ≈3.0M vs. women ≈0.1M), while health occupations and business/finance/administration skew heavily female, confirming the persistence of occupational gender segregation across all NOC major groups; sales and service occupations represent the single largest NOC group in absolute terms with near-parity (≈2.0M women, ≈1.9M men), reflecting the feminisation of high-volume service-sector employment.</p>
+            </div>
+          </div>
+
+          <div class="fig-card span-2" id="fig-ca-20">
+            <div class="fig-area fig-area--photo">
+              <img src="graphs/graph-20.png" alt="Graph 20 — Gender Segregation by Occupation" class="fig-img" />
+            </div>
+            <div class="fig-caption">
+              <p class="fig-num">Graph 20 &mdash; Census 2021</p>
+              <h4>Gender Segregation by Occupation (NOC, Canada 2021)</h4>
+              <p>Diverging bar chart showing men's and women's headcounts by NOC major group with women's share annotated for extreme cases.</p>
+              <p class="fig-desc">Occupational gender segregation is most extreme in trades/transport (women's share: 8.9%) and health occupations (women's share: 80.1%); the magnitude of segregation — as measured by the dissimilarity index implied by these distributions — indicates that substantial cross-occupation reallocation would be required to achieve gender balance, with corresponding implications for wage convergence given the persistent wage penalty in female-dominated fields.</p>
+            </div>
+          </div>
+
           <div class="fig-card" id="fig-ca-13">
             <div class="fig-area">
               <div class="grid-bg"></div>
-              <span class="fig-label">Chart placeholder — population pyramid</span>
+              <span class="fig-label">Chart placeholder — age-sex population pyramid (IRCC/Census data pending)</span>
             </div>
             <div class="fig-caption">
               <p class="fig-num">Figure CA-13</p>
@@ -423,10 +597,11 @@
               <p>Working-age concentration visible in immigrant population. Source: Census 2021.</p>
             </div>
           </div>
+
           <div class="fig-card" id="fig-ca-14">
             <div class="fig-area">
               <div class="grid-bg"></div>
-              <span class="fig-label">Chart placeholder — stacked bar</span>
+              <span class="fig-label">Chart placeholder — official language knowledge at landing (IRCC data pending)</span>
             </div>
             <div class="fig-caption">
               <p class="fig-num">Figure CA-14</p>
@@ -434,12 +609,13 @@
               <p>English only, French only, both, neither — by immigration class. Source: IRCC.</p>
             </div>
           </div>
+
         </div>
 
         <div class="analysis tone-rose">
           <h3>Demographic Analysis</h3>
-          <p>Canada's immigrant population is distinguished by high educational attainment and strong working-age concentration. The median age of recent immigrants (approximately 31) is significantly lower than the median age of the Canadian-born population (approximately 41), positioning immigration as a key demographic lever against population aging and below-replacement fertility (TFR of approximately 1.3).</p>
-          <p>Official language proficiency at landing has improved over time, driven by Express Entry's language scoring. However, significant heterogeneity exists by immigration class: economic principal applicants score substantially higher on CLB/NCLC benchmarks than family-class or humanitarian admissions, creating differentiated settlement and integration service demands.</p>
+          <p>Canada's immigrant population is distinguished by high educational attainment and strong working-age concentration, with Asia constituting over half of the foreign-born population (Graph 2). The sex-disaggregated income analysis (Graph 3) documents a persistent gender income gap of 17–31% across income concepts, despite the narrowing of educational attainment gaps (Graph 6) in which women now surpass men at the bachelor's degree level.</p>
+          <p>Occupational segregation (Graphs 10, 20) remains a structural feature of the Canadian labour market, with trades and transport NOC groups retaining near-complete male dominance (women's share: 8.9%) and health occupations correspondingly female-dominated (80.1%). These patterns interact with educational credential distributions to produce persistent sectoral wage gaps that aggregate income measures partially obscure.</p>
         </div>
       </div>
     </section>
@@ -472,7 +648,7 @@
           </div>
         </div>
         <div class="footer-contact">
-          <strong>Charles River Economics Labs</strong><br />
+          <strong>Contact</strong><br />
           <a href="mailto:charlesrivereconomicslabs@gmail.com">charlesrivereconomicslabs@gmail.com</a><br />
           <a href="mailto:akilansankaran@college.harvard.edu">akilansankaran@college.harvard.edu</a>
         </div>

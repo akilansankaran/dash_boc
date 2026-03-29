@@ -36,10 +36,10 @@
   };
 
   var COLORS = {
-    base: { stroke: '#eab308', fill: 'rgba(234,179,8,.10)', hover: '#fde047' },
-    blue: { stroke: '#3b82f6', fill: 'rgba(59,130,246,.10)', hover: '#93c5fd' },
-    teal: { stroke: '#14b8a6', fill: 'rgba(20,184,166,.10)', hover: '#5eead4' },
-    red:  { stroke: '#ef4444', fill: 'rgba(239,68,68,.10)',  hover: '#fca5a5' }
+    base: { stroke: '#ca8a04', fill: 'rgba(202,138,4,.07)', hover: '#a16207' },
+    blue: { stroke: '#2563eb', fill: 'rgba(37,99,235,.07)', hover: '#1d4ed8' },
+    teal: { stroke: '#0d9488', fill: 'rgba(13,148,136,.07)', hover: '#0f766e' },
+    red:  { stroke: '#dc2626', fill: 'rgba(220,38,38,.07)',  hover: '#b91c1c' }
   };
 
   var NODE_PAD   = 32;
