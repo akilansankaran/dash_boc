@@ -53,7 +53,7 @@
   <header class="page-header page-header--hero">
     <div class="container">
       <!-- Abstract network visualization -->
-      <svg class="hero-viz" viewBox="0 0 800 200" aria-hidden="true">
+      <svg class="hero-viz" viewBox="0 0 800 160" aria-hidden="true">
         <defs>
           <filter id="glow-blue" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="3" result="blur"/>
@@ -89,6 +89,13 @@
           <line data-edge="9" x1="560" y1="55" x2="630" y2="40" stroke="#dc2626" />
           <line data-edge="10" x1="250" y1="55" x2="560" y2="55" stroke="#0d9488" stroke-dasharray="4 6" />
           <line data-edge="11" x1="220" y1="120" x2="530" y2="125" stroke="#0d9488" stroke-dasharray="4 6" />
+          <!-- Top-tier edges -->
+          <line data-edge="12" x1="330" y1="40" x2="190" y2="20" stroke="#2563eb" />
+          <line data-edge="13" x1="330" y1="40" x2="400" y2="28" stroke="url(#grad-blue-teal)" />
+          <line data-edge="14" x1="400" y1="28" x2="630" y2="40" stroke="url(#grad-teal-red)" />
+          <line data-edge="15" x1="190" y1="20" x2="400" y2="28" stroke="#0d9488" stroke-dasharray="4 6" />
+          <line data-edge="16" x1="400" y1="28" x2="680" y2="22" stroke="#dc2626" />
+          <line data-edge="17" x1="400" y1="28" x2="400" y2="85" stroke="#0d9488" />
         </g>
 
         <!-- Highlight overlay edges (for scan animation) -->
@@ -103,6 +110,12 @@
         <circle cx="220" cy="120" r="2.8" class="node-solid" fill="#2563eb" data-node="us-2" />
         <circle cx="330" cy="40" r="4" stroke="#2563eb" class="node-ring" />
         <circle cx="330" cy="40" r="2" class="node-solid" fill="#2563eb" data-node="us-3" />
+        <circle cx="190" cy="20" r="3.5" stroke="#2563eb" class="node-ring" />
+        <circle cx="190" cy="20" r="1.8" class="node-solid" fill="#2563eb" data-node="us-4" />
+
+        <!-- Top central node -->
+        <circle cx="400" cy="28" r="5" stroke="#0d9488" class="node-ring" />
+        <circle cx="400" cy="28" r="2.5" class="node-solid" fill="#0d9488" data-node="center-top" />
 
         <!-- Central node -->
         <circle cx="400" cy="85" r="9.5" stroke="#0d9488" class="node-ring" />
@@ -117,6 +130,8 @@
         <circle cx="530" cy="125" r="2.8" class="node-solid" fill="#dc2626" data-node="ca-2" />
         <circle cx="630" cy="40" r="4" stroke="#dc2626" class="node-ring" />
         <circle cx="630" cy="40" r="2" class="node-solid" fill="#dc2626" data-node="ca-3" />
+        <circle cx="680" cy="22" r="3.5" stroke="#dc2626" class="node-ring" />
+        <circle cx="680" cy="22" r="1.8" class="node-solid" fill="#dc2626" data-node="ca-4" />
 
         <!-- Peripheral dots -->
         <circle cx="60" cy="60" r="1.8" class="node-solid" fill="#2563eb" />
@@ -133,10 +148,6 @@
         <!-- Traveling data particles (animated via JS) -->
         <g class="hero-particles"></g>
 
-        <!-- Labels -->
-        <text x="100" y="175" text-anchor="middle" fill="#7c8598" font-family="'EB Garamond', Georgia, serif" font-size="12" font-style="italic">United States</text>
-        <text x="400" y="175" text-anchor="middle" fill="#7c8598" font-family="'EB Garamond', Georgia, serif" font-size="12" font-style="italic">Comparative Analysis</text>
-        <text x="700" y="175" text-anchor="middle" fill="#7c8598" font-family="'EB Garamond', Georgia, serif" font-size="12" font-style="italic">Canada</text>
       </svg>
 
       <p class="hero-label">Charles River Economics Labs &middot; Harvard University &middot; Bank of Canada</p>
@@ -245,11 +256,13 @@
 
     // Define scan paths (sequences of edge indices to light up)
     var paths = [
-      [0, 2, 5, 7],   // US main → US-1 → center → CA-1 → CA main
-      [1, 3, 6, 8],   // US main → US-2 → center → CA-2 → CA main
-      [0, 4, 10, 9],  // US main → US-1 → US-3, cross to CA-1 → CA-3
-      [1, 11, 8],      // US main → US-2, cross to CA-2 → CA main
-      [7, 5, 3, 1],   // reverse: CA → center → US
+      [0, 2, 5, 7],            // US main → US-1 → center → CA-1 → CA main
+      [1, 3, 6, 8],            // US main → US-2 → center → CA-2 → CA main
+      [0, 4, 13, 14, 7],       // US main → US-1 → US-3 → top center → CA-3 → CA main (top route)
+      [0, 4, 12, 15, 16],      // US main → US-1 → US-3 → US-4 → top center → CA-4 (upper arc)
+      [1, 11, 8],              // US main → US-2 → cross to CA-2 → CA main
+      [7, 9, 14, 17, 3, 1],    // reverse: CA main → CA-1 → CA-3 → top center → center → US-2 → US main
+      [0, 4, 13, 17, 6, 8],    // US → top → center drop → CA-2 → CA main
     ];
 
     // Create highlight overlay lines matching base edges
@@ -267,7 +280,9 @@
       0: ['us-main','us-1'], 1: ['us-main','us-2'], 2: ['us-1','center'],
       3: ['us-2','center'], 4: ['us-1','us-3'], 5: ['center','ca-1'],
       6: ['center','ca-2'], 7: ['ca-1','ca-main'], 8: ['ca-2','ca-main'],
-      9: ['ca-1','ca-3'], 10: ['us-1','ca-1'], 11: ['us-2','ca-2']
+      9: ['ca-1','ca-3'], 10: ['us-1','ca-1'], 11: ['us-2','ca-2'],
+      12: ['us-3','us-4'], 13: ['us-3','center-top'], 14: ['center-top','ca-3'],
+      15: ['us-4','center-top'], 16: ['center-top','ca-4'], 17: ['center-top','center']
     };
 
     // Create a traveling particle along an edge
@@ -307,7 +322,8 @@
       pathIdx++;
       var colors = { 0:'#2563eb',1:'#2563eb',2:'#0d9488',3:'#0d9488',4:'#2563eb',
                      5:'#0d9488',6:'#0d9488',7:'#dc2626',8:'#dc2626',9:'#dc2626',
-                     10:'#0d9488',11:'#0d9488' };
+                     10:'#0d9488',11:'#0d9488',12:'#2563eb',13:'#0d9488',
+                     14:'#0d9488',15:'#0d9488',16:'#dc2626',17:'#0d9488' };
 
       path.forEach(function(edgeIdx, step) {
         var delay = step * 500;
