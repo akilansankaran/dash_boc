@@ -79,6 +79,17 @@ const SEARCH_INDEX = [
   { title:"Provincial Nominee Retention Rates, 1–5 Years", category:"Provincial Data", page:"canada.html", tab:"ca-prov", figId:"fig-ca-12", keywords:"retention interprovincial migration IMDB" },
   { title:"Age-Sex Distribution, Immigrant vs. Canadian-Born", category:"Demographics", page:"canada.html", tab:"ca-demo", figId:"fig-ca-13", keywords:"population pyramid age working-age" },
   { title:"Official Language Knowledge at Landing", category:"Demographics", page:"canada.html", tab:"ca-demo", figId:"fig-ca-14", keywords:"English French CLB NCLC language" },
+  { title:"Immigrant Population by World Region of Birth (Canada, 2021)", category:"Demographics", page:"canada.html", tab:"ca-demo", figId:"fig-ca-2", keywords:"origin Asia Europe Americas Africa world region birth" },
+  { title:"Visible Minority Categories (Canada, 2021)", category:"Demographics", page:"canada.html", tab:"ca-demo", figId:"fig-ca-4", keywords:"visible minority South Asian Chinese Black racialized" },
+  { title:"Sex Composition and Median Income Gap (Canada, 2021)", category:"Demographics", page:"canada.html", tab:"ca-demo", figId:"fig-ca-3", keywords:"gender income gap male female market after-tax" },
+  { title:"Household Type Distribution (Canada, 2021)", category:"Demographics", page:"canada.html", tab:"ca-demo", figId:"fig-ca-5", keywords:"household one-person multigenerational census family" },
+  { title:"Educational Attainment by Sex (Canada, 2021)", category:"Demographics", page:"canada.html", tab:"ca-demo", figId:"fig-ca-6", keywords:"education bachelor college trades degree sex gender" },
+  { title:"Broad Occupation Groups (NOC), by Sex (Canada, 2021)", category:"Demographics", page:"canada.html", tab:"ca-demo", figId:"fig-ca-10-occ", keywords:"NOC occupation trades health business sales service gender" },
+  { title:"Gender Segregation by Occupation (NOC, Canada 2021)", category:"Demographics", page:"canada.html", tab:"ca-demo", figId:"fig-ca-20", keywords:"gender segregation butterfly women share health trades transport" },
+  { title:"Citizenship Status by Province/Territory (2021)", category:"Provincial Data", page:"canada.html", tab:"ca-prov", figId:"fig-ca-1-prov", keywords:"citizenship province territory naturalization Nunavut Ontario BC" },
+  { title:"One-Person Households vs. Median Total Income (2021)", category:"Provincial Data", page:"canada.html", tab:"ca-prov", figId:"fig-ca-17", keywords:"household one-person median income province scatter correlation" },
+  { title:"Immigrant Region × Education Heatmap (Cramér's V)", category:"Economic Integration", page:"canada.html", tab:"ca-econ", figId:"fig-ca-11", keywords:"education heatmap region Africa Europe Asia postsecondary Cramer" },
+  { title:"Employment Rate by Asia-share Tercile (ANOVA)", category:"Economic Integration", page:"canada.html", tab:"ca-econ", figId:"fig-ca-12", keywords:"employment rate Asia tercile ANOVA province" },
 
   // ── Analysis sections (searchable headings) ───────────────
   { title:"Historical Trends and Admission Waves (U.S.)", category:"Admission Flows", page:"us.html", tab:"us-flows", figId:"fig-us-1", keywords:"IRCA legalization source-country composition" },

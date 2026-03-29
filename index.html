@@ -52,10 +52,56 @@
   <!-- Page header -->
   <header class="page-header page-header--hero">
     <div class="container">
+      <!-- Abstract network visualization -->
+      <svg class="hero-viz" viewBox="0 0 800 120" aria-hidden="true">
+        <!-- Connection lines -->
+        <line x1="120" y1="60" x2="300" y2="35" stroke="#2563eb" />
+        <line x1="120" y1="60" x2="250" y2="80" stroke="#2563eb" />
+        <line x1="300" y1="35" x2="400" y2="55" stroke="#d4d9e1" />
+        <line x1="250" y1="80" x2="400" y2="55" stroke="#d4d9e1" />
+        <line x1="400" y1="55" x2="550" y2="35" stroke="#d4d9e1" />
+        <line x1="400" y1="55" x2="520" y2="85" stroke="#d4d9e1" />
+        <line x1="550" y1="35" x2="680" y2="60" stroke="#dc2626" />
+        <line x1="520" y1="85" x2="680" y2="60" stroke="#dc2626" />
+        <line x1="300" y1="35" x2="550" y2="35" stroke="#0d9488" stroke-dasharray="4 6" />
+        <line x1="250" y1="80" x2="520" y2="85" stroke="#0d9488" stroke-dasharray="4 6" />
+        <!-- U.S. cluster -->
+        <circle cx="120" cy="60" r="6" stroke="#2563eb" />
+        <circle cx="120" cy="60" r="3" class="node-solid pulse" fill="#2563eb" />
+        <circle cx="300" cy="35" r="4" stroke="#2563eb" />
+        <circle cx="300" cy="35" r="2" class="node-solid" fill="#2563eb" />
+        <circle cx="250" cy="80" r="4" stroke="#2563eb" />
+        <circle cx="250" cy="80" r="2" class="node-solid" fill="#2563eb" />
+        <!-- Central node -->
+        <circle cx="400" cy="55" r="7" stroke="#0d9488" />
+        <circle cx="400" cy="55" r="3.5" class="node-solid pulse-d" fill="#0d9488" />
+        <!-- Canada cluster -->
+        <circle cx="680" cy="60" r="6" stroke="#dc2626" />
+        <circle cx="680" cy="60" r="3" class="node-solid pulse-s" fill="#dc2626" />
+        <circle cx="550" cy="35" r="4" stroke="#dc2626" />
+        <circle cx="550" cy="35" r="2" class="node-solid" fill="#dc2626" />
+        <circle cx="520" cy="85" r="4" stroke="#dc2626" />
+        <circle cx="520" cy="85" r="2" class="node-solid" fill="#dc2626" />
+        <!-- Peripheral dots -->
+        <circle cx="80" cy="40" r="1.5" class="node-solid" fill="#2563eb" />
+        <circle cx="160" cy="30" r="1.5" class="node-solid" fill="#2563eb" />
+        <circle cx="180" cy="95" r="1.5" class="node-solid" fill="#2563eb" />
+        <circle cx="340" cy="20" r="1.5" class="node-solid" fill="#d4d9e1" />
+        <circle cx="450" cy="90" r="1.5" class="node-solid" fill="#d4d9e1" />
+        <circle cx="360" cy="95" r="1.5" class="node-solid" fill="#0d9488" />
+        <circle cx="620" cy="95" r="1.5" class="node-solid" fill="#dc2626" />
+        <circle cx="720" cy="40" r="1.5" class="node-solid" fill="#dc2626" />
+        <circle cx="640" cy="25" r="1.5" class="node-solid" fill="#dc2626" />
+        <!-- Labels -->
+        <text x="120" y="110" text-anchor="middle" fill="#7c8598" font-family="'EB Garamond', Georgia, serif" font-size="11" font-style="italic">United States</text>
+        <text x="400" y="110" text-anchor="middle" fill="#7c8598" font-family="'EB Garamond', Georgia, serif" font-size="11" font-style="italic">Comparative Analysis</text>
+        <text x="680" y="110" text-anchor="middle" fill="#7c8598" font-family="'EB Garamond', Georgia, serif" font-size="11" font-style="italic">Canada</text>
+      </svg>
+
       <p class="hero-label">Charles River Economics Labs &middot; Harvard University &middot; Bank of Canada</p>
       <div class="hero-accent"></div>
       <h1>Two nations, one question: immigration within and across the U.S. and Canada.</h1>
-      <p class="hero-subtitle">Developed at Harvard by Charles River Economics Labs, this tracker monitors immigration flows, policy frameworks, labor market integration, and fiscal outcomes across the United States and Canada. We integrate standardized, cross-nationally comparable metrics derived from administrative records, census microdata, cross-sectional datasets, and longitudinal surveys to provide consistent measures of immigration patterns and outcomes across both countries.</p>
+      <p class="hero-subtitle">This tracker monitors immigration flows, policy frameworks, labor market integration, and fiscal outcomes across the United States and Canada, integrating standardized, cross-nationally comparable metrics derived from administrative records, census microdata, and longitudinal surveys.</p>
       <button class="search-bar-trigger" onclick="openSearch()">
         <span class="search-bar-icon">&#x2315;</span>
         <span class="search-bar-text">Search for a parameter or keyword within a figure<span class="search-dots"></span></span>
@@ -116,8 +162,9 @@
           </div>
         </div>
         <div class="footer-contact">
-          <strong>Charles River Economics Labs</strong><br />
-          <a href="mailto:charlesrivereconomicslabs@gmail.com">Contact us</a><br />
+          <strong>Contact</strong><br />
+          <a href="mailto:charlesrivereconomicslabs@gmail.com">charlesrivereconomicslabs@gmail.com</a><br />
+          <a href="mailto:akilansankaran@college.harvard.edu">akilansankaran@college.harvard.edu</a>
         </div>
       </div>
       <div class="footer-bottom">
