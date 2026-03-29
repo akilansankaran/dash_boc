@@ -53,7 +53,7 @@
   <header class="page-header page-header--hero">
     <div class="container">
       <!-- Abstract network visualization -->
-      <svg class="hero-viz" viewBox="0 0 800 160" aria-hidden="true">
+      <svg class="hero-viz" viewBox="0 0 800 145" aria-hidden="true">
         <defs>
           <filter id="glow-blue" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="3" result="blur"/>
@@ -96,6 +96,10 @@
           <line data-edge="15" x1="190" y1="20" x2="400" y2="28" stroke="#0d9488" stroke-dasharray="4 6" />
           <line data-edge="16" x1="400" y1="28" x2="680" y2="22" stroke="#dc2626" />
           <line data-edge="17" x1="400" y1="28" x2="400" y2="85" stroke="#0d9488" />
+          <!-- Direct connections to main vertices via top nodes -->
+          <line data-edge="18" x1="630" y1="40" x2="700" y2="90" stroke="#dc2626" />
+          <line data-edge="19" x1="680" y1="22" x2="700" y2="90" stroke="#dc2626" />
+          <line data-edge="20" x1="100" y1="90" x2="190" y2="20" stroke="#2563eb" />
         </g>
 
         <!-- Highlight overlay edges (for scan animation) -->
@@ -254,15 +258,17 @@
     var highlightG = svg.querySelector('.hero-edges-highlight');
     var particleG = svg.querySelector('.hero-particles');
 
-    // Define scan paths (sequences of edge indices to light up)
+    // Define scan paths — every path starts/ends at us-main or ca-main,
+    // consecutive edges always share a node (no skipping)
     var paths = [
-      [0, 2, 5, 7],            // US main → US-1 → center → CA-1 → CA main
-      [1, 3, 6, 8],            // US main → US-2 → center → CA-2 → CA main
-      [0, 4, 13, 14, 7],       // US main → US-1 → US-3 → top center → CA-3 → CA main (top route)
-      [0, 4, 12, 15, 16],      // US main → US-1 → US-3 → US-4 → top center → CA-4 (upper arc)
-      [1, 11, 8],              // US main → US-2 → cross to CA-2 → CA main
-      [7, 9, 14, 17, 3, 1],    // reverse: CA main → CA-1 → CA-3 → top center → center → US-2 → US main
-      [0, 4, 13, 17, 6, 8],    // US → top → center drop → CA-2 → CA main
+      [0, 2, 5, 7],              // us-main → us-1 → center → ca-1 → ca-main
+      [1, 3, 6, 8],              // us-main → us-2 → center → ca-2 → ca-main
+      [0, 4, 13, 14, 18],        // us-main → us-1 → us-3 → center-top → ca-3 → ca-main
+      [20, 15, 16, 19],          // us-main → us-4 → center-top → ca-4 → ca-main
+      [8, 6, 3, 1],              // ca-main → ca-2 → center → us-2 → us-main (reverse)
+      [18, 14, 17, 2, 0],        // ca-main → ca-3 → center-top → center → us-1 → us-main
+      [0, 4, 13, 17, 6, 8],      // us-main → us-1 → us-3 → center-top → center → ca-2 → ca-main
+      [19, 16, 13, 4, 0],        // ca-main → ca-4 → center-top → us-3 → us-1 → us-main
     ];
 
     // Create highlight overlay lines matching base edges
@@ -282,7 +288,8 @@
       6: ['center','ca-2'], 7: ['ca-1','ca-main'], 8: ['ca-2','ca-main'],
       9: ['ca-1','ca-3'], 10: ['us-1','ca-1'], 11: ['us-2','ca-2'],
       12: ['us-3','us-4'], 13: ['us-3','center-top'], 14: ['center-top','ca-3'],
-      15: ['us-4','center-top'], 16: ['center-top','ca-4'], 17: ['center-top','center']
+      15: ['us-4','center-top'], 16: ['center-top','ca-4'], 17: ['center-top','center'],
+      18: ['ca-3','ca-main'], 19: ['ca-4','ca-main'], 20: ['us-main','us-4']
     };
 
     // Create a traveling particle along an edge
@@ -323,7 +330,8 @@
       var colors = { 0:'#2563eb',1:'#2563eb',2:'#0d9488',3:'#0d9488',4:'#2563eb',
                      5:'#0d9488',6:'#0d9488',7:'#dc2626',8:'#dc2626',9:'#dc2626',
                      10:'#0d9488',11:'#0d9488',12:'#2563eb',13:'#0d9488',
-                     14:'#0d9488',15:'#0d9488',16:'#dc2626',17:'#0d9488' };
+                     14:'#0d9488',15:'#0d9488',16:'#dc2626',17:'#0d9488',
+                     18:'#dc2626',19:'#dc2626',20:'#2563eb' };
 
       path.forEach(function(edgeIdx, step) {
         var delay = step * 500;
@@ -356,9 +364,9 @@
       });
     }
 
-    // Initial scan after a short delay, then every 3.5 seconds
+    // Initial scan after a short delay, then every 5 seconds (pause between iterations)
     setTimeout(runScan, 800);
-    setInterval(runScan, 3500);
+    setInterval(runScan, 5000);
   })();
   </script>
 </body>
