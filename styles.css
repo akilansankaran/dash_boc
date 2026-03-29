@@ -337,29 +337,57 @@ a.inst-logo-link.crel-brand:hover { color: var(--blue); }
 /* ── Hero variant (index page) ──────────────────────────── */
 .hero-viz {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto 1.5rem;
+  max-width: 960px;
+  margin: 0 auto 2rem;
   display: block;
 }
-.hero-viz circle {
+.hero-viz .node-ring {
   fill: none;
-  stroke-width: 0.8;
-  opacity: 0.4;
+  stroke-width: 1;
+  opacity: 0.3;
 }
-.hero-viz line {
-  stroke-width: 0.5;
-  opacity: 0.12;
+.hero-viz .hero-edges line {
+  stroke-width: 1;
+  opacity: 0.15;
+  transition: opacity 0.6s ease, stroke-width 0.6s ease;
+}
+.hero-viz .hero-edges line.edge-active {
+  opacity: 0.6;
+  stroke-width: 2;
+}
+.hero-viz .hero-edges-highlight line {
+  stroke-width: 2.5;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.hero-viz .hero-edges-highlight line.edge-glow {
+  opacity: 0.85;
+  filter: url(#glow-blue);
 }
 .hero-viz .node-solid {
   stroke: none;
-  opacity: 0.6;
+  opacity: 0.7;
+}
+.hero-viz .node-solid[data-node] {
+  transition: opacity 0.5s ease, r 0.5s ease;
+}
+.hero-viz .node-solid.node-lit {
+  opacity: 1;
+}
+.hero-viz .hero-particles circle {
+  fill: currentColor;
+  opacity: 0;
 }
 @keyframes heroPulse {
-  0%, 100% { r: 3; opacity: 0.5; }
-  50% { r: 4.5; opacity: 0.8; }
+  0%, 100% { r: 4; opacity: 0.55; }
+  50% { r: 6; opacity: 0.9; }
+}
+@keyframes heroPulseCenter {
+  0%, 100% { r: 5; opacity: 0.55; }
+  50% { r: 7.5; opacity: 0.95; }
 }
 .hero-viz .pulse { animation: heroPulse 4s ease-in-out infinite; }
-.hero-viz .pulse-d { animation: heroPulse 4s ease-in-out infinite 1.3s; }
+.hero-viz .pulse-d { animation: heroPulseCenter 4s ease-in-out infinite 1.3s; }
 .hero-viz .pulse-s { animation: heroPulse 4s ease-in-out infinite 2.6s; }
 .page-header--hero {
   border-top: none;

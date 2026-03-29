@@ -53,49 +53,90 @@
   <header class="page-header page-header--hero">
     <div class="container">
       <!-- Abstract network visualization -->
-      <svg class="hero-viz" viewBox="0 0 800 120" aria-hidden="true">
-        <!-- Connection lines -->
-        <line x1="120" y1="60" x2="300" y2="35" stroke="#2563eb" />
-        <line x1="120" y1="60" x2="250" y2="80" stroke="#2563eb" />
-        <line x1="300" y1="35" x2="400" y2="55" stroke="#d4d9e1" />
-        <line x1="250" y1="80" x2="400" y2="55" stroke="#d4d9e1" />
-        <line x1="400" y1="55" x2="550" y2="35" stroke="#d4d9e1" />
-        <line x1="400" y1="55" x2="520" y2="85" stroke="#d4d9e1" />
-        <line x1="550" y1="35" x2="680" y2="60" stroke="#dc2626" />
-        <line x1="520" y1="85" x2="680" y2="60" stroke="#dc2626" />
-        <line x1="300" y1="35" x2="550" y2="35" stroke="#0d9488" stroke-dasharray="4 6" />
-        <line x1="250" y1="80" x2="520" y2="85" stroke="#0d9488" stroke-dasharray="4 6" />
+      <svg class="hero-viz" viewBox="0 0 800 200" aria-hidden="true">
+        <defs>
+          <filter id="glow-blue" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glow-red" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glow-teal" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <linearGradient id="grad-blue-teal" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#2563eb"/><stop offset="100%" stop-color="#0d9488"/>
+          </linearGradient>
+          <linearGradient id="grad-teal-red" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#0d9488"/><stop offset="100%" stop-color="#dc2626"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Base connection lines -->
+        <g class="hero-edges">
+          <line data-edge="0" x1="100" y1="90" x2="250" y2="55" stroke="#2563eb" />
+          <line data-edge="1" x1="100" y1="90" x2="220" y2="120" stroke="#2563eb" />
+          <line data-edge="2" x1="250" y1="55" x2="400" y2="85" stroke="url(#grad-blue-teal)" />
+          <line data-edge="3" x1="220" y1="120" x2="400" y2="85" stroke="url(#grad-blue-teal)" />
+          <line data-edge="4" x1="250" y1="55" x2="330" y2="40" stroke="#2563eb" />
+          <line data-edge="5" x1="400" y1="85" x2="560" y2="55" stroke="url(#grad-teal-red)" />
+          <line data-edge="6" x1="400" y1="85" x2="530" y2="125" stroke="url(#grad-teal-red)" />
+          <line data-edge="7" x1="560" y1="55" x2="700" y2="90" stroke="#dc2626" />
+          <line data-edge="8" x1="530" y1="125" x2="700" y2="90" stroke="#dc2626" />
+          <line data-edge="9" x1="560" y1="55" x2="630" y2="40" stroke="#dc2626" />
+          <line data-edge="10" x1="250" y1="55" x2="560" y2="55" stroke="#0d9488" stroke-dasharray="4 6" />
+          <line data-edge="11" x1="220" y1="120" x2="530" y2="125" stroke="#0d9488" stroke-dasharray="4 6" />
+        </g>
+
+        <!-- Highlight overlay edges (for scan animation) -->
+        <g class="hero-edges-highlight"></g>
+
         <!-- U.S. cluster -->
-        <circle cx="120" cy="60" r="6" stroke="#2563eb" />
-        <circle cx="120" cy="60" r="3" class="node-solid pulse" fill="#2563eb" />
-        <circle cx="300" cy="35" r="4" stroke="#2563eb" />
-        <circle cx="300" cy="35" r="2" class="node-solid" fill="#2563eb" />
-        <circle cx="250" cy="80" r="4" stroke="#2563eb" />
-        <circle cx="250" cy="80" r="2" class="node-solid" fill="#2563eb" />
+        <circle cx="100" cy="90" r="8" stroke="#2563eb" class="node-ring" />
+        <circle cx="100" cy="90" r="4" class="node-solid pulse" fill="#2563eb" data-node="us-main" />
+        <circle cx="250" cy="55" r="5.5" stroke="#2563eb" class="node-ring" />
+        <circle cx="250" cy="55" r="2.8" class="node-solid" fill="#2563eb" data-node="us-1" />
+        <circle cx="220" cy="120" r="5.5" stroke="#2563eb" class="node-ring" />
+        <circle cx="220" cy="120" r="2.8" class="node-solid" fill="#2563eb" data-node="us-2" />
+        <circle cx="330" cy="40" r="4" stroke="#2563eb" class="node-ring" />
+        <circle cx="330" cy="40" r="2" class="node-solid" fill="#2563eb" data-node="us-3" />
+
         <!-- Central node -->
-        <circle cx="400" cy="55" r="7" stroke="#0d9488" />
-        <circle cx="400" cy="55" r="3.5" class="node-solid pulse-d" fill="#0d9488" />
+        <circle cx="400" cy="85" r="9.5" stroke="#0d9488" class="node-ring" />
+        <circle cx="400" cy="85" r="5" class="node-solid pulse-d" fill="#0d9488" data-node="center" />
+
         <!-- Canada cluster -->
-        <circle cx="680" cy="60" r="6" stroke="#dc2626" />
-        <circle cx="680" cy="60" r="3" class="node-solid pulse-s" fill="#dc2626" />
-        <circle cx="550" cy="35" r="4" stroke="#dc2626" />
-        <circle cx="550" cy="35" r="2" class="node-solid" fill="#dc2626" />
-        <circle cx="520" cy="85" r="4" stroke="#dc2626" />
-        <circle cx="520" cy="85" r="2" class="node-solid" fill="#dc2626" />
+        <circle cx="700" cy="90" r="8" stroke="#dc2626" class="node-ring" />
+        <circle cx="700" cy="90" r="4" class="node-solid pulse-s" fill="#dc2626" data-node="ca-main" />
+        <circle cx="560" cy="55" r="5.5" stroke="#dc2626" class="node-ring" />
+        <circle cx="560" cy="55" r="2.8" class="node-solid" fill="#dc2626" data-node="ca-1" />
+        <circle cx="530" cy="125" r="5.5" stroke="#dc2626" class="node-ring" />
+        <circle cx="530" cy="125" r="2.8" class="node-solid" fill="#dc2626" data-node="ca-2" />
+        <circle cx="630" cy="40" r="4" stroke="#dc2626" class="node-ring" />
+        <circle cx="630" cy="40" r="2" class="node-solid" fill="#dc2626" data-node="ca-3" />
+
         <!-- Peripheral dots -->
-        <circle cx="80" cy="40" r="1.5" class="node-solid" fill="#2563eb" />
-        <circle cx="160" cy="30" r="1.5" class="node-solid" fill="#2563eb" />
-        <circle cx="180" cy="95" r="1.5" class="node-solid" fill="#2563eb" />
-        <circle cx="340" cy="20" r="1.5" class="node-solid" fill="#d4d9e1" />
-        <circle cx="450" cy="90" r="1.5" class="node-solid" fill="#d4d9e1" />
-        <circle cx="360" cy="95" r="1.5" class="node-solid" fill="#0d9488" />
-        <circle cx="620" cy="95" r="1.5" class="node-solid" fill="#dc2626" />
-        <circle cx="720" cy="40" r="1.5" class="node-solid" fill="#dc2626" />
-        <circle cx="640" cy="25" r="1.5" class="node-solid" fill="#dc2626" />
+        <circle cx="60" cy="60" r="1.8" class="node-solid" fill="#2563eb" />
+        <circle cx="140" cy="45" r="1.8" class="node-solid" fill="#2563eb" />
+        <circle cx="160" cy="140" r="1.8" class="node-solid" fill="#2563eb" />
+        <circle cx="300" cy="25" r="1.8" class="node-solid" fill="#d4d9e1" />
+        <circle cx="470" cy="135" r="1.8" class="node-solid" fill="#0d9488" />
+        <circle cx="350" cy="145" r="1.8" class="node-solid" fill="#0d9488" />
+        <circle cx="450" cy="40" r="1.8" class="node-solid" fill="#d4d9e1" />
+        <circle cx="620" cy="140" r="1.8" class="node-solid" fill="#dc2626" />
+        <circle cx="740" cy="60" r="1.8" class="node-solid" fill="#dc2626" />
+        <circle cx="660" cy="30" r="1.8" class="node-solid" fill="#dc2626" />
+
+        <!-- Traveling data particles (animated via JS) -->
+        <g class="hero-particles"></g>
+
         <!-- Labels -->
-        <text x="120" y="110" text-anchor="middle" fill="#7c8598" font-family="'EB Garamond', Georgia, serif" font-size="11" font-style="italic">United States</text>
-        <text x="400" y="110" text-anchor="middle" fill="#7c8598" font-family="'EB Garamond', Georgia, serif" font-size="11" font-style="italic">Comparative Analysis</text>
-        <text x="680" y="110" text-anchor="middle" fill="#7c8598" font-family="'EB Garamond', Georgia, serif" font-size="11" font-style="italic">Canada</text>
+        <text x="100" y="175" text-anchor="middle" fill="#7c8598" font-family="'EB Garamond', Georgia, serif" font-size="12" font-style="italic">United States</text>
+        <text x="400" y="175" text-anchor="middle" fill="#7c8598" font-family="'EB Garamond', Georgia, serif" font-size="12" font-style="italic">Comparative Analysis</text>
+        <text x="700" y="175" text-anchor="middle" fill="#7c8598" font-family="'EB Garamond', Georgia, serif" font-size="12" font-style="italic">Canada</text>
       </svg>
 
       <p class="hero-label">Charles River Economics Labs &middot; Harvard University &middot; Bank of Canada</p>
@@ -193,5 +234,116 @@
 
   <script src="search.js"></script>
   <script src="flowchart.js"></script>
+  <script>
+  (function() {
+    var svg = document.querySelector('.hero-viz');
+    if (!svg) return;
+
+    var baseEdges = svg.querySelectorAll('.hero-edges line');
+    var highlightG = svg.querySelector('.hero-edges-highlight');
+    var particleG = svg.querySelector('.hero-particles');
+
+    // Define scan paths (sequences of edge indices to light up)
+    var paths = [
+      [0, 2, 5, 7],   // US main → US-1 → center → CA-1 → CA main
+      [1, 3, 6, 8],   // US main → US-2 → center → CA-2 → CA main
+      [0, 4, 10, 9],  // US main → US-1 → US-3, cross to CA-1 → CA-3
+      [1, 11, 8],      // US main → US-2, cross to CA-2 → CA main
+      [7, 5, 3, 1],   // reverse: CA → center → US
+    ];
+
+    // Create highlight overlay lines matching base edges
+    var hlLines = [];
+    baseEdges.forEach(function(e) {
+      var hl = e.cloneNode(false);
+      hl.removeAttribute('data-edge');
+      hl.removeAttribute('stroke-dasharray');
+      highlightG.appendChild(hl);
+      hlLines.push(hl);
+    });
+
+    // Node positions keyed by edge endpoints for lighting up nodes
+    var edgeNodes = {
+      0: ['us-main','us-1'], 1: ['us-main','us-2'], 2: ['us-1','center'],
+      3: ['us-2','center'], 4: ['us-1','us-3'], 5: ['center','ca-1'],
+      6: ['center','ca-2'], 7: ['ca-1','ca-main'], 8: ['ca-2','ca-main'],
+      9: ['ca-1','ca-3'], 10: ['us-1','ca-1'], 11: ['us-2','ca-2']
+    };
+
+    // Create a traveling particle along an edge
+    function createParticle(edgeIdx, color, duration) {
+      var edge = baseEdges[edgeIdx];
+      if (!edge) return;
+      var x1 = +edge.getAttribute('x1'), y1 = +edge.getAttribute('y1');
+      var x2 = +edge.getAttribute('x2'), y2 = +edge.getAttribute('y2');
+
+      var dot = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      dot.setAttribute('cx', x1);
+      dot.setAttribute('cy', y1);
+      dot.setAttribute('r', '2.5');
+      dot.style.fill = color;
+      dot.style.opacity = '0';
+      particleG.appendChild(dot);
+
+      var start = null;
+      function animate(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / duration, 1);
+        // ease in-out
+        var t = p < 0.5 ? 2*p*p : 1 - Math.pow(-2*p+2,2)/2;
+        dot.setAttribute('cx', x1 + (x2 - x1) * t);
+        dot.setAttribute('cy', y1 + (y2 - y1) * t);
+        dot.style.opacity = p < 0.1 ? p/0.1 : p > 0.85 ? (1-p)/0.15 : 0.9;
+        if (p < 1) requestAnimationFrame(animate);
+        else particleG.removeChild(dot);
+      }
+      requestAnimationFrame(animate);
+    }
+
+    // Run a scan along a path
+    var pathIdx = 0;
+    function runScan() {
+      var path = paths[pathIdx % paths.length];
+      pathIdx++;
+      var colors = { 0:'#2563eb',1:'#2563eb',2:'#0d9488',3:'#0d9488',4:'#2563eb',
+                     5:'#0d9488',6:'#0d9488',7:'#dc2626',8:'#dc2626',9:'#dc2626',
+                     10:'#0d9488',11:'#0d9488' };
+
+      path.forEach(function(edgeIdx, step) {
+        var delay = step * 500;
+
+        setTimeout(function() {
+          // Light up edge
+          baseEdges[edgeIdx].classList.add('edge-active');
+          hlLines[edgeIdx].classList.add('edge-glow');
+
+          // Light up connected nodes
+          var nodes = edgeNodes[edgeIdx] || [];
+          nodes.forEach(function(n) {
+            var el = svg.querySelector('[data-node="'+n+'"]');
+            if (el) el.classList.add('node-lit');
+          });
+
+          // Send particle
+          createParticle(edgeIdx, colors[edgeIdx] || '#0d9488', 600);
+
+          // Fade out after a beat
+          setTimeout(function() {
+            baseEdges[edgeIdx].classList.remove('edge-active');
+            hlLines[edgeIdx].classList.remove('edge-glow');
+            nodes.forEach(function(n) {
+              var el = svg.querySelector('[data-node="'+n+'"]');
+              if (el) el.classList.remove('node-lit');
+            });
+          }, 900);
+        }, delay);
+      });
+    }
+
+    // Initial scan after a short delay, then every 3.5 seconds
+    setTimeout(runScan, 800);
+    setInterval(runScan, 3500);
+  })();
+  </script>
 </body>
 </html>
